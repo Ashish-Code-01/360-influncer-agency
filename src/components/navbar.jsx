@@ -17,7 +17,7 @@ function Navbar() {
                 </li>
                 <li>
                     <a href="about" style={linkStyle}>
-                        About
+                        About Us
                     </a>
                 </li>
                 <li>
@@ -32,7 +32,7 @@ function Navbar() {
                 </li>
                 <li>
                     <a href="contactus" style={linkStyle}>
-                        Contact
+                        Contact Us
                     </a>
                 </li>
                 <li>
