@@ -42,7 +42,7 @@ function Navbar() {
                 </li>
                 <li>
                     <a href="platforms" style={linkStyle}>
-                        platforms
+                        Platforms
                     </a>
                 </li>
                 <li>
@@ -52,12 +52,12 @@ function Navbar() {
                 </li>
                 <li>
                     <a href="cases" style={linkStyle}>
-                        cases
+                        Cases
                     </a>
                 </li>
                 <li>
                     <a href="blog" style={linkStyle}>
-                        blog
+                        Blog
                     </a>
                 </li>
                 <li>
