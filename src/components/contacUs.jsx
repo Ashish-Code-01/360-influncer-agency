@@ -1,18 +1,22 @@
 import React from 'react';
+import Background from "../assets/portfoilo/background4.png"
+import { height } from '@fortawesome/free-brands-svg-icons/fa42Group';
 
 const styles = {
     container: {
-        background: "black",
-        color: "white",
+        background: `URL(${Background})`,
+        backgroundRepeat: "no-repeat",
+        color: "black",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         gap: "20px",
-        width: "100%",
+        width: "100vw",
         padding: "2rem 1rem",
         minHeight: "100vh",
-        boxSizing: "border-box"
+        boxSizing: "border-box",
+        backgroundSize: "cover",
     },
     heading: {
         fontSize: "clamp(1.5rem, 5vw, 2.5rem)",
@@ -28,13 +32,12 @@ const styles = {
     form: {
         width: "70%",
         maxWidth: "500px",
-        padding: "0 1rem"
+        padding: "0 1rem",
     },
     inputWrapper: {
         marginBottom: "1.5rem"
     },
     input: {
-        background: "white",
         color: "black",
         border: "none",
         padding: "12px 20px",
@@ -43,7 +46,6 @@ const styles = {
         fontSize: "1rem"
     },
     textarea: {
-        background: "white",
         color: "black",
         border: "none",
         padding: "12px 20px",

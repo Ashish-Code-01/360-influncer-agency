@@ -7,7 +7,8 @@ import Contactus from "./views/Contactus.jsx"
 import Platforms from "./views/platforms.jsx"
 import ForCreators from "./views/Creators.jsx"
 import Blog from "./views/Blog.jsx"
-import  Testomonials from "./views/Testonimals.jsx"
+import Testomonials from "./views/Testonimals.jsx"
+import Industries from "./views/industries.jsx"
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/ForCreators" element={<ForCreators />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/Testomonials" element={<Testomonials />} />
+        <Route path="/industries" element={<Industries />} />
       </Routes>
     </BrowserRouter>
   )
