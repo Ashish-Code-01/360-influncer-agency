@@ -9,6 +9,7 @@ import ForCreators from "./views/Creators.jsx"
 import Blog from "./views/Blog.jsx"
 import Testomonials from "./views/Testonimals.jsx"
 import Industries from "./views/industries.jsx"
+import CaseStudy from "./views/CaseStudy.jsx"
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/Testomonials" element={<Testomonials />} />
         <Route path="/industries" element={<Industries />} />
+        <Route path="/cases" element={<CaseStudy />} />
       </Routes>
     </BrowserRouter>
   )
