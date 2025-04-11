@@ -4,7 +4,7 @@ const Platforms = () => {
     return (
         <div style={{ background: "black", display: "flex", flexDirection: "column", alignItems: 'center' }}>
             <h1>Social Media</h1>
-            <h3 style={{ marginTop: "30px" }}>INSTAGRAM</h3>
+            <h2 style={{ marginTop: "30px" }}>INSTAGRAM</h2>
             <div style={{ marginTop: "50px", width: "50%", backgroundColor: "white", padding: "20px 40px", borderRadius: "30px" }}>
                 <h2 style={{ marginBottom: "30px", color: "black" }}> Leverage Instagram influencer marketing <br /> to increase your ROI and drive sales.   </h2>
                 <p style={{ color: "black" }}>The Trend Fluence, we’re here to handle the research, connect you with the right Instagram influencers at the best rates, and oversee your next impactful influencer marketing campaign.</p>
@@ -33,7 +33,7 @@ const Platforms = () => {
             <div style={{ marginTop: "50px", width: "50%", backgroundColor: "white", padding: "20px 40px", borderRadius: "30px", display: "flex", flexDirection: "column", gap: "20px" }}>
                 <h2 style={{ color: "black" }}>With over 2 billion active users, Instagram continues to be a top platform for reaching potential customers! Your audience is waiting to discover your brand. We specialize in helping you grow your sales and boost brand visibility through the power of Instagram influencers' posts, Stories, and Reels. Reach out today, and let’s kickstart your brand’s growth! </h2>
             </div>
-            <h3 style={{ marginTop: "30px" }}>YOUTUBE</h3>
+            <h2 style={{ marginTop: "30px" }}>YOUTUBE</h2>
             <div style={{ marginTop: "50px", width: "50%", backgroundColor: "white", padding: "20px 40px", borderRadius: "30px" }}>
                 <h2 style={{ marginBottom: "30px", color: "black" }}> YouTube Influencer Marketing Agency to Make Your Brand a Global Sensation  </h2>
                 <p style={{ color: "black" }}>With over 120 million active daily users, YouTube offers a massive audience eager to discover your brand and products! We specialize in connecting you with your ideal audience quickly and effortlessly.</p>
@@ -62,7 +62,7 @@ const Platforms = () => {
                 </h2>
             </div>
 
-            <h3 style={{ marginTop: "30px" }}>TikTok</h3>
+            <h2 style={{ marginTop: "30px" }}>TikTok</h2>
             <div style={{ marginTop: "50px", width: "50%", backgroundColor: "white", padding: "20px 40px", borderRadius: "30px" }}>
                 <h2 style={{ marginBottom: "30px", color: "black" }}>TikTok Influencer Marketing: We turn your brand into a sensation</h2>
                 <p style={{ color: "black" }}> Here’s why your brand needs a TikTok influencer marketing agency. TikTok is the platform where users spend the most time – averaging over 23 hours per month. At Trend Fluence, we help you leverage that time for your brand’s benefit through TikTok influencer marketing. Our agency ensures that your brand gets the spotlight it deserves on one of the world’s most engaging and widely used social media platforms!
