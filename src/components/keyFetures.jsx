@@ -148,16 +148,13 @@ function App() {
                 justifyContent: "space-around", // Distribute images evenly
                 alignItems: "center",
                 backgroundSize: "cover",
-                width: '95%',
+                width: '98%',
                 height: "auto", // Adjust height automatically
                 padding: "20px", // Add some padding around images
                 flexWrap: "wrap", // Allow images to wrap to the next line
                 gap: "15px", // Gap between images
             }}>
-                <img src={top1} alt="" style={{ height: "120px", width: "auto", maxWidth: "45%" }} /> {/* Adjust image sizes */}
-                <img src={clutch} alt="" style={{ height: "120px", width: "auto", maxWidth: "45%" }} />
-                <img src={clutch} alt="" style={{ height: "120px", width: "auto", maxWidth: "45%" }} />
-                <img src={topMarcketing} alt="" style={{ height: "120px", width: "auto", maxWidth: "45%" }} />
+
             </div>
         </>
     );

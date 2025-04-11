@@ -19,6 +19,8 @@ import logo7 from "../assets/keyfetures/Icon7.png"
 import logo8 from "../assets/keyfetures/Icon8.png"
 
 const Services = () => {
+
+    console.log("innerWidth : ", window.innerWidth)
     return (
         <div style={{
             background: "black",
@@ -267,7 +269,7 @@ const Services = () => {
             {/* Feature Cards */}
             <div style={{
                 display: "flex",
-                flexDirection: window.innerWidth < 1024 ? 'row' : 'column',
+                flexDirection: window.innerWidth <= 900 ? 'column' : 'row',
                 gap: "30px",
                 marginTop: "50px",
                 width: '90%',
@@ -392,7 +394,7 @@ const Services = () => {
             ].map((cardPair, pairIndex) => (
                 <div key={pairIndex} style={{
                     display: "flex",
-                    flexDirection: window.innerWidth < 1024 ? 'row' : 'column',
+                    flexDirection: window.innerWidth <= 900 ? 'column' : 'row',
                     gap: "30px",
                     marginTop: "50px",
                     width: '90%',
