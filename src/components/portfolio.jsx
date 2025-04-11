@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
+import { motion } from 'framer-motion';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Background1 from "../assets/portfoilo/background1.png";
@@ -46,19 +47,50 @@ const Portfolio = () => {
     };
 
     return (
-        <div className="portfolio-container">
+        <motion.div 
+            className="portfolio-container"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+        >
             <div className="portfolio-header">
-                <p className="portfolio-title">PORTFOLIO</p>
+                <motion.p 
+                    className="portfolio-title"
+                    initial={{ y: -20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    PORTFOLIO
+                </motion.p>
                 <div className="portfolio-header-content">
-                    <h1 className="portfolio-headline">
+                    <motion.h1 
+                        className="portfolio-headline"
+                        initial={{ x: -50, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                    >
                         We create beautiful,<br />
                         <span className="highlight">practical works </span>
-                    </h1>
-                    <button className="portfolio-button">View All Work →</button>
+                    </motion.h1>
+                    <motion.button 
+                        className="portfolio-button"
+                        initial={{ x: 50, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        View All Work →
+                    </motion.button>
                 </div>
             </div>
 
-            <div className="portfolio-slider-container">
+            <motion.div 
+                className="portfolio-slider-container"
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+            >
                 <Slider {...settings}>
                     <PortfolioSlide 
                         image={Background1} 
@@ -86,26 +118,45 @@ const Portfolio = () => {
                         subtitle="play a Video" 
                     />
                 </Slider>
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
     );
 };
 
-// Slide component for better reusability
+// Slide component with animations
 const PortfolioSlide = ({ image, title, subtitle }) => {
     return (
-        <div className="portfolio-slide">
+        <motion.div 
+            className="portfolio-slide"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+        >
             <div className="slide-image-container">
-                <img
+                <motion.img
                     src={image}
                     alt={title}
                     className="slide-image"
+                    initial={{ scale: 1.1 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 0.5 }}
                 />
-                <div className="slide-overlay">
+                <motion.div 
+                    className="slide-overlay"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                >
                     <p className="slide-title">{title}</p>
                     <p className="slide-subtitle">{subtitle}</p>
-                </div>
-                <div className="slide-play-button">
+                </motion.div>
+                <motion.div 
+                    className="slide-play-button"
+                    whileHover={{ 
+                        scale: 1.2,
+                        backgroundColor: 'rgba(0, 237, 231, 0.9)'
+                    }}
+                    whileTap={{ scale: 0.9 }}
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"
@@ -116,9 +167,9 @@ const PortfolioSlide = ({ image, title, subtitle }) => {
                     >
                         <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-.946 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
                     </svg>
-                </div>
+                </motion.div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

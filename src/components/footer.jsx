@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import Logo from "../assets/logo.png";
 import Facebook from "../assets/footer/facebook.png"
 import Twiter from "../assets/footer/twiter.png"
@@ -7,69 +8,180 @@ import Youtube from "../assets/footer/youtube.png"
 import Vlogo from "../assets/footer/v.png"
 
 function Footer() {
+    // Get window width for responsive design
+    const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
+
+    React.useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const isMobile = windowWidth <= 768;
+    const isSmallScreen = windowWidth <= 480;
+
     return (
-        <footer style={footerStyle}>
-            <div style={leftSectionStyle}>
+        <footer style={{
+            ...footerStyle,
+            flexDirection: isMobile ? 'column' : 'row',
+        }}>
+            <div style={{
+                ...leftSectionStyle,
+                maxWidth: isMobile ? '100%' : '40%',
+                textAlign: isMobile ? 'center' : 'left',
+            }}>
                 <div style={logoStyle}>
-                    <span style={logoTextStyle}><img src={Logo} alt="logo" height={70} /></span>
+                    <motion.span
+                        style={logoTextStyle}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <img src={Logo} alt="logo" height={70} />
+                    </motion.span>
                 </div>
-                <p style={descriptionStyle}>360 °  Influencer Marketing Agency - a creative agency specializing in making videos <br /> for strategy, marketing and production.</p>
+                <motion.p
+                    style={descriptionStyle}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                     360° Influencer Marketing Agency - a creative agency specializing in making videos <br /> for strategy, marketing and production.
+                </motion.p>
                 <div style={socialIconsStyle}>
-                    <div style={iconCircle}><img src={Facebook} alt=" facebook logo" /></div>
-                    <div style={iconCircle}><img src={Twiter} alt=" twitter logo" /></div>
-                    <div style={iconCircle}><img src={Mail} alt=" mail logo" /></div>
-                    <div style={iconCircle}><img src={Youtube} alt=" youtube logo" /></div>
-                    <div style={iconCircle}><img src={Vlogo} alt=" v logo" /></div>
+                    <motion.div
+                        style={iconCircle}
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.9 }}
+                    >
+                        <img src={Facebook} alt=" facebook logo" />
+                    </motion.div>
+                    <motion.div
+                        style={iconCircle}
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.9 }}
+                    >
+                        <img src={Twiter} alt=" twitter logo" />
+                    </motion.div>
+                    <motion.div
+                        style={iconCircle}
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.9 }}
+                    >
+                        <img src={Mail} alt=" mail logo" />
+                    </motion.div>
+                    <motion.div
+                        style={iconCircle}
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.9 }}
+                    >
+                        <img src={Youtube} alt=" youtube logo" />
+                    </motion.div>
+                    <motion.div
+                        style={iconCircle}
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.9 }}
+                    >
+                        <img src={Vlogo} alt=" v logo" />
+                    </motion.div>
                 </div>
             </div>
-            <div style={rightSectionStyle}>
-                <ul style={menuColumnStyle}>
-                    <li style={menuItemStyle}>
+            <div style={{
+                ...rightSectionStyle,
+                flexDirection: isMobile ? 'column' : 'row',
+                width: isMobile ? '100%' : 'auto',
+            }}>
+                <ul style={{
+                    ...menuColumnStyle,
+                    width: isMobile ? '80%' : '100%',
+                    textAlign: isMobile ? 'center' : 'left',
+                }}>
+                    <motion.li
+                        style={menuItemStyle}
+                        whileHover={{ scale: 1.1, x: 10 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
                         <span style={linkStyle}>Home</span>
                         <span style={arrowStyle}>&#x2197;</span>
-                    </li>
+                    </motion.li>
                     <hr style={linestyle} />
-                    <li style={menuItemStyle}>
+                    <motion.li
+                        style={menuItemStyle}
+                        whileHover={{ scale: 1.1, x: 10 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
                         <span style={linkStyle}>About Us</span>
                         <span style={arrowStyle}>&#x2197;</span>
-                    </li>
+                    </motion.li>
                     <hr style={linestyle} />
-                    <li style={menuItemStyle}>
+                    <motion.li
+                        style={menuItemStyle}
+                        whileHover={{ scale: 1.1, x: 10 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
                         <span style={linkStyle}>Portfolios</span>
                         <span style={arrowStyle}>&#x2197;</span>
-                    </li>
+                    </motion.li>
                     <hr style={linestyle} />
-                    <li style={menuItemStyle}>
+                    <motion.li
+                        style={menuItemStyle}
+                        whileHover={{ scale: 1.1, x: 10 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
                         <span style={linkStyle}>Services</span>
                         <span style={arrowStyle}>&#x2197;</span>
-                    </li>
+                    </motion.li>
                     <hr style={linestyle} />
-                    <li style={menuItemStyle}>
+                    <motion.li
+                        style={menuItemStyle}
+                        whileHover={{ scale: 1.1, x: 10 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
                         <span style={linkStyle}>Contact Us</span>
                         <span style={arrowStyle}>&#x2197;</span>
-                    </li>
+                    </motion.li>
                     <hr style={linestyle} />
                 </ul>
-                <ul style={menuColumnStyle}>
-                    <li style={comingSoonItemStyle}>
-                        <span style={comingSoonTextStyle}>Comming Soon...</span>
+                <ul style={{
+                    ...menuColumnStyle,
+                    width: isMobile ? '80%' : '100%',
+                    textAlign: isMobile ? 'center' : 'left',
+                }}>
+                    <motion.li
+                        style={comingSoonItemStyle}
+                        whileHover={{ scale: 1.1, x: 10 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
+                        <span style={comingSoonTextStyle}>Coming Soon...</span>
                         <span style={arrowStyle}>&#x2197;</span>
-                    </li>
+                    </motion.li>
                     <hr style={linestyle} />
-                    <li style={comingSoonItemStyle}>
-                        <span style={comingSoonTextStyle}>Comming Soon...</span>
+                    <motion.li
+                        style={comingSoonItemStyle}
+                        whileHover={{ scale: 1.1, x: 10 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
+                        <span style={comingSoonTextStyle}>Coming Soon...</span>
                         <span style={arrowStyle}>&#x2197;</span>
-                    </li>
+                    </motion.li>
                     <hr style={linestyle} />
-                    <li style={comingSoonItemStyle}>
-                        <span style={comingSoonTextStyle}>Comming Soon...</span>
+                    <motion.li
+                        style={comingSoonItemStyle}
+                        whileHover={{ scale: 1.1, x: 10 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
+                        <span style={comingSoonTextStyle}>Coming Soon...</span>
                         <span style={arrowStyle}>&#x2197;</span>
-                    </li>
+                    </motion.li>
                     <hr style={linestyle} />
-                    <li style={comingSoonItemStyle}>
-                        <span style={comingSoonTextStyle}>Comming Soon...</span>
+                    <motion.li
+                        style={comingSoonItemStyle}
+                        whileHover={{ scale: 1.1, x: 10 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
+                        <span style={comingSoonTextStyle}>Coming Soon...</span>
                         <span style={arrowStyle}>&#x2197;</span>
-                    </li>
+                    </motion.li>
                     <hr style={linestyle} />
                 </ul>
             </div>
@@ -77,7 +189,7 @@ function Footer() {
     );
 }
 
-// CSS-in-JS styles with media queries for responsiveness
+// CSS-in-JS styles
 const footerStyle = {
     backgroundColor: '#000',
     color: '#fff',
@@ -87,36 +199,18 @@ const footerStyle = {
     alignItems: 'flex-start',
     fontFamily: 'sans-serif',
     flexWrap: 'wrap',
-    '@media (max-width: 768px)': {
-        width: '100%',
-        flexDirection: 'column', // Stack columns vertically
-        alignItems: 'center',
-        gap: '30px',
-    },
 };
 
 const leftSectionStyle = {
     maxWidth: '40%',
-    marginBottom: '30px', // Add some space below on smaller screens
-
-    // For smaller screens (like tablets)
-    '@media (max-width: 768px)': {
-        maxWidth: '100%',
-        textAlign: 'center',
-    },
-
-    // For even smaller screens (like phones)
-    '@media (max-width: 480px)': {
-        maxWidth: '100%',
-        textAlign: 'center',
-    },
+    marginBottom: '30px',
 };
 
 const logoStyle = {
     display: 'flex',
     alignItems: 'center',
     marginBottom: '20px',
-    justifyContent: 'center', // Center logo on smaller screens
+    justifyContent: 'center',
 };
 
 const logoTextStyle = {
@@ -134,9 +228,9 @@ const descriptionStyle = {
 const socialIconsStyle = {
     display: 'flex',
     gap: '10px',
-    marginTop: '20px', // Adjust margin for smaller screens
+    marginTop: '20px',
     cursor: 'pointer',
-    justifyContent: 'center', // Center icons on smaller screens
+    justifyContent: 'center',
 };
 
 const iconCircle = {
@@ -148,20 +242,13 @@ const iconCircle = {
     justifyContent: 'center',
     alignItems: 'center',
     fontSize: '0.8em',
+    transition: 'transform 0.3s ease',
 };
 
 const rightSectionStyle = {
     display: 'flex',
     gap: '50px',
-    justifyContent: 'space-around', // Distribute columns on wider screens
-
-    // For smaller screens
-    '@media (max-width: 768px)': {
-        width: '100%',
-        flexDirection: 'column', // Stack columns vertically
-        alignItems: 'center',
-        gap: '30px',
-    },
+    justifyContent: 'space-around',
 };
 
 const menuColumnStyle = {
@@ -169,14 +256,6 @@ const menuColumnStyle = {
     padding: 0,
     margin: 0,
     width: '100%',
-
-    // For smaller screens
-    '@media (max-width: 768px)': {
-        width: '80%',
-        textAlign: 'center',
-        flexDirection: "row",
-        flexWrap: "wrap"
-    },
 };
 
 const menuItemStyle = {
@@ -184,6 +263,7 @@ const menuItemStyle = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
+    transition: 'transform 0.3s ease',
 };
 
 const comingSoonItemStyle = {
@@ -193,6 +273,7 @@ const comingSoonItemStyle = {
     alignItems: 'center',
     color: '#aaa',
     marginTop: '10px',
+    transition: 'transform 0.3s ease',
 };
 
 const linkStyle = {

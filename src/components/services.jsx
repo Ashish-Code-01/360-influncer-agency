@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faYoutube,
@@ -17,10 +17,39 @@ import logo5 from "../assets/keyfetures/Icon5.png"
 import logo6 from "../assets/keyfetures/Icon6.png"
 import logo7 from "../assets/keyfetures/Icon7.png"
 import logo8 from "../assets/keyfetures/Icon8.png"
+import { motion, useInView, useAnimationControls } from 'framer-motion';
 
 const Services = () => {
+    const [isMobile, setIsMobile] = useState(false);
+    const [isTablet, setIsTablet] = useState(false);
+    const ref = useRef(null);
+    const inView = useInView(ref, { once: true });
+    const controls = useAnimationControls();
 
-    console.log("innerWidth : ", window.innerWidth)
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+            setIsTablet(window.innerWidth >= 768 && window.innerWidth < 1024);
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    useEffect(() => {
+        if (inView) {
+            controls.start({
+                opacity: 1,
+                y: 0,
+                transition: {
+                    duration: 0.6,
+                    ease: "easeInOut"
+                }
+            });
+        }
+    }, [inView, controls]);
+
     return (
         <div style={{
             background: "black",
@@ -29,15 +58,20 @@ const Services = () => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            overflowX: 'hidden'
+            overflowX: 'hidden',
+            padding: isMobile ? '20px 10px' : '20px'
         }}>
             {/* Header Section */}
-            <div style={{
-                textAlign: 'center',
-                padding: '20px',
-                width: '100%',
-                maxWidth: '1200px'
-            }}>
+            <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={controls}
+                style={{
+                    textAlign: 'center',
+                    padding: isMobile ? '10px' : '20px',
+                    width: '100%',
+                    maxWidth: '1200px'
+                }}
+            >
                 <div style={{
                     fontWeight: "bold",
                     marginBottom: "30px",
@@ -68,17 +102,21 @@ const Services = () => {
                         PROVIDES TRANSPARENT <span style={{ color: "rgba(0, 237, 231, 1)" }}>A-Z SERVICES </span>
                     </h1>
                 </div>
-            </div>
+            </motion.div>
 
             {/* Services Grid */}
-            <div style={{
-                backgroundColor: 'black',
-                color: 'white',
-                padding: '20px',
-                width: "90%",
-                maxWidth: "1000px",
-                marginTop: "40px"
-            }}>
+            <motion.div
+                ref={ref}
+                initial={{ opacity: 0, y: 50 }}
+                style={{
+                    backgroundColor: 'black',
+                    color: 'white',
+                    padding: isMobile ? '10px' : '20px',
+                    width: isMobile ? "95%" : "90%",
+                    maxWidth: "1000px",
+                    marginTop: isMobile ? "20px" : "40px"
+                }}
+            >
                 {[
                     { left: "Influencer search", right: "Media planning" },
                     { left: "Legal & compliance services", right: "Content distribution strategy" },
@@ -87,16 +125,18 @@ const Services = () => {
                     <React.Fragment key={index}>
                         <div style={{
                             display: 'flex',
-                            flexDirection: window.innerWidth < 768 ? 'column' : 'row',
+                            flexDirection: isMobile ? 'column' : 'row',
                             justifyContent: 'space-between',
-                            alignItems: 'center',
+                            alignItems: isMobile ? 'flex-start' : 'center',
                             marginBottom: '15px',
-                            gap: '20px'
+                            gap: isMobile ? '10px' : '20px',
+                            padding: isMobile ? '10px' : 0
                         }}>
                             <div style={{
                                 flex: 1,
-                                fontSize: "clamp(16px, 3vw, 25px)",
-                                textAlign: window.innerWidth < 768 ? 'center' : 'left'
+                                fontSize: "clamp(14px, 3vw, 25px)",
+                                textAlign: isMobile ? 'left' : 'left',
+                                width: isMobile ? '100%' : 'auto'
                             }}>
                                 {service.left}
                             </div>
@@ -104,36 +144,39 @@ const Services = () => {
                                 flex: 1,
                                 display: 'flex',
                                 alignItems: 'center',
-                                justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start',
-                                gap: '10px'
+                                justifyContent: isMobile ? 'space-between' : 'flex-start',
+                                gap: '10px',
+                                width: isMobile ? '100%' : 'auto'
                             }}>
                                 <div style={{
                                     backgroundColor: index === 0 ? '#00FFFF' : '#222',
                                     borderRadius: '50%',
-                                    width: 'clamp(40px, 8vw, 50px)',
-                                    height: 'clamp(40px, 8vw, 50px)',
+                                    width: isMobile ? '35px' : 'clamp(40px, 8vw, 50px)',
+                                    height: isMobile ? '35px' : 'clamp(40px, 8vw, 50px)',
                                     display: 'flex',
                                     justifyContent: 'center',
                                     alignItems: 'center',
                                     marginRight: '10px',
-                                    flexShrink: 0
+                                    flexShrink: 0,
+                                    cursor: "pointer",
+                                    transition: 'transform 0.2s ease'
                                 }}>
                                     <span style={{
                                         color: index === 0 ? 'black' : 'white',
-                                        fontSize: 'clamp(16px, 4vw, 25px)',
-                                        fontWeight: "bold",
-                                        cursor: "pointer"
+                                        fontSize: isMobile ? '16px' : 'clamp(16px, 4vw, 25px)',
+                                        fontWeight: "bold"
                                     }}>
                                         ↗
                                     </span>
                                 </div>
                                 <div style={{
-                                    fontSize: "clamp(16px, 3vw, 25px)",
-                                    textAlign: window.innerWidth < 768 ? 'center' : 'left'
+                                    fontSize: isMobile ? "14px" : "clamp(16px, 3vw, 25px)",
+                                    textAlign: 'left',
+                                    flex: 1
                                 }}>
                                     {service.right}
                                 </div>
-                                {window.innerWidth >= 768 && (
+                                {!isMobile && (
                                     <div style={{ marginLeft: 'auto' }}>
                                         <div style={{
                                             backgroundColor: '#222',
@@ -145,7 +188,8 @@ const Services = () => {
                                             alignItems: 'center',
                                             fontSize: 'clamp(16px, 4vw, 25px)',
                                             cursor: "pointer",
-                                            flexShrink: 0
+                                            flexShrink: 0,
+                                            transition: 'transform 0.2s ease'
                                         }}>
                                             ↗
                                         </div>
@@ -153,13 +197,16 @@ const Services = () => {
                                 )}
                             </div>
                         </div>
-                        {index < 2 && <hr style={{ borderColor: '#333', marginBottom: '15px' }} />}
+                        {index < 2 && <hr style={{ borderColor: '#333', marginBottom: '15px', width: '100%' }} />}
                     </React.Fragment>
                 ))}
-            </div>
+            </motion.div>
 
             {/* Image Section */}
-            <img
+            <motion.img
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, ease: 'easeInOut' }}
                 src={Image}
                 style={{
                     borderRadius: "20px",
@@ -172,13 +219,17 @@ const Services = () => {
             />
 
             {/* Results Section */}
-            <div style={{
-                width: '90%',
-                maxWidth: '1200px',
-                textAlign: 'center',
-                padding: '20px',
-                marginBottom: '60px'
-            }}>
+            <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.2 }}
+                style={{
+                    width: '90%',
+                    maxWidth: '1200px',
+                    textAlign: 'center',
+                    padding: '20px',
+                }}
+            >
                 <h1 style={{
                     fontSize: 'clamp(24px, 4vw, 42px)',
                     fontWeight: 'bold',
@@ -187,7 +238,7 @@ const Services = () => {
                     <span style={{ color: '#00FFFF' }}>Get real & measurable</span> business results
                     <br />
                     with turnkey influencer marketing <br />
-                    {window.innerWidth >= 768 && <center>solutions</center>}
+                    {!isMobile && <center>solutions</center>}
                 </h1>
                 <p style={{
                     fontSize: 'clamp(14px, 2vw, 18px)',
@@ -218,7 +269,9 @@ const Services = () => {
                         <div key={index} style={{
                             display: 'flex',
                             alignItems: 'center',
-                            margin: '0 10px'
+                            margin: '0 10px',
+                            transition: 'transform 0.2s ease',
+                            ':hover': { transform: 'scale(1.1)' }
                         }}>
                             {item.icon && (
                                 <FontAwesomeIcon
@@ -237,15 +290,20 @@ const Services = () => {
                         </div>
                     ))}
                 </div>
-            </div>
+            </motion.div>
 
             {/* Why Choose Us Section */}
-            <div style={{
-                textAlign: 'center',
-                width: '90%',
-                maxWidth: '1200px',
-                marginTop: "60px"
-            }}>
+            <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.4 }}
+                style={{
+                    textAlign: 'center',
+                    width: '90%',
+                    maxWidth: '1200px',
+                    marginTop: "60px"
+                }}
+            >
                 <h2 style={{
                     letterSpacing: "3px",
                     fontSize: "clamp(20px, 4vw, 30px)",
@@ -264,18 +322,23 @@ const Services = () => {
                 }}>
                     We provide you with a distinct combination of transparency, data-driven strategies, and a dedicated team that ensures each campaign maximizes both reach and impact.
                 </p>
-            </div>
+            </motion.div>
 
             {/* Feature Cards */}
-            <div style={{
-                display: "flex",
-                flexDirection: window.innerWidth <= 900 ? 'column' : 'row',
-                gap: "30px",
-                marginTop: "50px",
-                width: '90%',
-                maxWidth: '1200px',
-                alignItems: 'center'
-            }}>
+            <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.6 }}
+                style={{
+                    display: "flex",
+                    flexDirection: isMobile ? "column" : "row",
+                    gap: isMobile ? "20px" : "30px",
+                    marginTop: isMobile ? "30px" : "50px",
+                    width: isMobile ? "95%" : "90%",
+                    maxWidth: '1200px',
+                    alignItems: 'center'
+                }}
+            >
                 {[
                     {
                         logo: logo1,
@@ -296,13 +359,15 @@ const Services = () => {
                         width: "100%",
                         maxWidth: "550px",
                         background: feature.bgColor,
-                        padding: "30px",
+                        padding: isMobile ? "20px" : "30px",
                         display: "flex",
                         flexDirection: "column",
-                        gap: "20px",
+                        gap: isMobile ? "15px" : "20px",
                         borderRadius: "20px",
                         position: 'relative',
-                        color: feature.textColor
+                        color: feature.textColor,
+                        transition: 'transform 0.3s ease',
+                        ':hover': { transform: 'translateY(-10px)' }
                     }}>
                         <img src={feature.logo} alt="logo" style={{ height: '50px', width: '50px' }} />
                         <h2 style={{
@@ -333,133 +398,154 @@ const Services = () => {
                             right: "30px",
                             bottom: "30px",
                             color: "black",
-                            cursor: "pointer"
+                            cursor: "pointer",
+                            transition: 'transform 0.2s ease',
+                            ':hover': { transform: 'scale(1.1)' }
                         }}>
                             ↗
                         </div>
                     </div>
                 ))}
-            </div>
+            </motion.div>
 
             {/* Additional Feature Cards */}
-            {[
-                [
-                    {
-                        logo: logo3,
-                        title: "Media planning",
-                        content: "The Famesters influencer marketing agency dedicated team devises comprehensive, multi-platform media strategies that ensure your message is seen by the right people, at the right time, in the right places. From initial concept to final execution, our meticulous planning maximizes reach and engagement, driving results that exceed expectations.",
-                        bgColor: "white",
-                        textColor: "black"
-                    },
-                    {
-                        logo: logo4,
-                        title: "Content distribution strategy",
-                        content: "The goal here is to ensure your influencer ads not only reach but resonate with your target audience across multiple channels. This is what the Famesters influencer agency crafts distribution strategies for. Our approach means your campaigns benefit from optimal visibility, engagement, and impact, amplifying your brand voice across relevant platforms.",
-                        bgColor: "white",
-                        textColor: "black"
-                    }
-                ],
-                [
-                    {
-                        logo: logo5,
-                        title: "Influencer fraud protection",
-                        content: "Your trust and security are our top priority. The Famesters influencer marketing agency implements robust fraud protection measures to safeguard your investments and ensure the authenticity of your influencer partnerships. Our advanced technology and vigilant manual monitoring detect and neutralize fraudulent influencer activity, ensuring that every view, like, and share represents a genuine engagement with your brand.",
-                        bgColor: "white",
-                        textColor: "black"
-                    },
-                    {
-                        logo: logo6,
-                        title: "Influencer marketing measurements & reports",
-                        content: "Data drives our decision-making. The Famesters influencer agency provides comprehensive measurements and in-depth reports that offer clear, actionable insights into your influencer campaign's performance. Our analytics go beyond surface-level metrics, delving into audience behavior, engagement trends, and ROI, empowering you to make informed decisions and continuously optimize your strategy.",
-                        bgColor: "white",
-                        textColor: "black"
-                    }
-                ],
-                [
-                    {
-                        logo: logo7,
-                        title: "Legal & compliance services",
-                        content: "You need confidence to succeed in influencer marketing. The Famesters influencer agency offers extensive legal and compliance services, ensuring your campaigns adhere to the latest regulations and industry standards. From influencer contracts to intellectual property rights and dispute resolutions, our expert team provides the guidance and support you need to protect your brand and operate with integrity.",
-                        bgColor: "white",
-                        textColor: "black"
-                    },
-                    {
-                        logo: logo8,
-                        title: "Payment & transaction services",
-                        content: "Our influencer marketing agency streamlines your operations. Our comprehensive solutions simplify the financial aspects of influencer partnerships, from seamless payments to transparent transactions. You don't need to worry about payment methods: just choose the ones that are convenient for you, and we will pay your chosen influencers the way they like it – the job is on us, we find the best ways.",
-                        bgColor: "white",
-                        textColor: "black"
-                    }
-                ]
-            ].map((cardPair, pairIndex) => (
-                <div key={pairIndex} style={{
-                    display: "flex",
-                    flexDirection: window.innerWidth <= 900 ? 'column' : 'row',
-                    gap: "30px",
-                    marginTop: "50px",
-                    width: '90%',
+            <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.8 }}
+                style={{
+                    marginTop: isMobile ? "20px" : "30px",
+                    width: isMobile ? "95%" : "100%",
                     maxWidth: '1200px',
-                    alignItems: 'center'
-                }}>
-                    {cardPair.map((feature, index) => (
-                        <div key={index} style={{
-                            width: "100%",
-                            maxWidth: "550px",
-                            background: feature.bgColor,
-                            padding: "30px",
-                            display: "flex",
-                            flexDirection: "column",
-                            gap: "20px",
-                            borderRadius: "20px",
-                            position: 'relative',
-                            color: feature.textColor
-                        }}>
-                            <img src={feature.logo} alt="logo" style={{ height: '50px', width: '50px' }} />
-                            <h2 style={{
+                    padding: isMobile ? "10px" : "20px"
+                }}
+            >
+                {[
+                    [
+                        {
+                            logo: logo3,
+                            title: "Media planning",
+                            content: "The Famesters influencer marketing agency dedicated team devises comprehensive, multi-platform media strategies that ensure your message is seen by the right people, at the right time, in the right places. From initial concept to final execution, our meticulous planning maximizes reach and engagement, driving results that exceed expectations.",
+                            bgColor: "white",
+                            textColor: "black"
+                        },
+                        {
+                            logo: logo4,
+                            title: "Content distribution strategy",
+                            content: "The goal here is to ensure your influencer ads not only reach but resonate with your target audience across multiple channels. This is what the Famesters influencer agency crafts distribution strategies for. Our approach means your campaigns benefit from optimal visibility, engagement, and impact, amplifying your brand voice across relevant platforms.",
+                            bgColor: "white",
+                            textColor: "black"
+                        }
+                    ],
+                    [
+                        {
+                            logo: logo5,
+                            title: "Influencer fraud protection",
+                            content: "Your trust and security are our top priority. The Famesters influencer marketing agency implements robust fraud protection measures to safeguard your investments and ensure the authenticity of your influencer partnerships. Our advanced technology and vigilant manual monitoring detect and neutralize fraudulent influencer activity, ensuring that every view, like, and share represents a genuine engagement with your brand.",
+                            bgColor: "white",
+                            textColor: "black"
+                        },
+                        {
+                            logo: logo6,
+                            title: "Influencer marketing measurements & reports",
+                            content: "Data drives our decision-making. The Famesters influencer agency provides comprehensive measurements and in-depth reports that offer clear, actionable insights into your influencer campaign's performance. Our analytics go beyond surface-level metrics, delving into audience behavior, engagement trends, and ROI, empowering you to make informed decisions and continuously optimize your strategy.",
+                            bgColor: "white",
+                            textColor: "black"
+                        }
+                    ],
+                    [
+                        {
+                            logo: logo7,
+                            title: "Legal & compliance services",
+                            content: "You need confidence to succeed in influencer marketing. The Famesters influencer agency offers extensive legal and compliance services, ensuring your campaigns adhere to the latest regulations and industry standards. From influencer contracts to intellectual property rights and dispute resolutions, our expert team provides the guidance and support you need to protect your brand and operate with integrity.",
+                            bgColor: "white",
+                            textColor: "black"
+                        },
+                        {
+                            logo: logo8,
+                            title: "Payment & transaction services",
+                            content: "Our influencer marketing agency streamlines your operations. Our comprehensive solutions simplify the financial aspects of influencer partnerships, from seamless payments to transparent transactions. You don't need to worry about payment methods: just choose the ones that are convenient for you, and we will pay your chosen influencers the way they like it – the job is on us, we find the best ways.",
+                            bgColor: "white",
+                            textColor: "black"
+                        }
+                    ]
+                ].map((cardPair, pairIndex) => (
+                    <div key={pairIndex} style={{
+                        display: "flex",
+                        flexDirection: isMobile ? "column" : "row",
+                        gap: isMobile ? "20px" : "30px",
+                        marginTop: isMobile ? "30px" : "50px",
+                        width: '100%',
+                        alignItems: 'center'
+                    }}>
+                        {cardPair.map((feature, index) => (
+                            <div key={index} style={{
+                                width: "100%",
+                                maxWidth: isMobile ? "100%" : "550px",
+                                background: feature.bgColor,
+                                padding: isMobile ? "20px" : "30px",
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: isMobile ? "15px" : "20px",
+                                borderRadius: "20px",
+                                position: 'relative',
                                 color: feature.textColor,
-                                fontSize: 'clamp(18px, 3vw, 24px)'
+                                transition: 'transform 0.3s ease'
                             }}>
-                                {feature.title}
-                            </h2>
-                            <p style={{
-                                lineHeight: "25px",
-                                letterSpacing: "1px",
-                                color: feature.textColor,
-                                fontWeight: "800",
-                                fontSize: 'clamp(14px, 2vw, 16px)'
-                            }}>
-                                {feature.content}
-                            </p>
-                            <div style={{
-                                backgroundColor: 'rgba(0, 237, 231, 1)',
-                                borderRadius: '50%',
-                                width: '50px',
-                                height: '50px',
-                                display: 'flex',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                fontSize: '25px',
-                                position: "absolute",
-                                right: "30px",
-                                bottom: "30px",
-                                color: "black",
-                                cursor: "pointer"
-                            }}>
-                                ↗
+                                <img src={feature.logo} alt="logo" style={{ height: '50px', width: '50px' }} />
+                                <h2 style={{
+                                    color: feature.textColor,
+                                    fontSize: 'clamp(18px, 3vw, 24px)'
+                                }}>
+                                    {feature.title}
+                                </h2>
+                                <p style={{
+                                    lineHeight: "25px",
+                                    letterSpacing: "1px",
+                                    color: feature.textColor,
+                                    fontWeight: "800",
+                                    fontSize: 'clamp(14px, 2vw, 16px)'
+                                }}>
+                                    {feature.content}
+                                </p>
+                                <div style={{
+                                    backgroundColor: 'rgba(0, 237, 231, 1)',
+                                    borderRadius: '50%',
+                                    width: '50px',
+                                    height: '50px',
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                    fontSize: '25px',
+                                    position: "absolute",
+                                    right: "30px",
+                                    bottom: "30px",
+                                    color: "black",
+                                    cursor: "pointer",
+                                    transition: 'transform 0.2s ease',
+                                    ':hover': { transform: 'scale(1.1)' }
+                                }}>
+                                    ↗
+                                </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
-            ))}
+                        ))}
+                    </div>
+                ))}
+            </motion.div>
 
             {/* Contact Section */}
-            <div style={{
-                marginTop: "100px",
-                marginBottom: "100px",
-                width: '90%',
-                maxWidth: '1200px',
-                textAlign: window.innerWidth < 768 ? 'center' : 'left'
-            }}>
+            <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: 'easeInOut', delay: 1 }}
+                style={{
+                    margin: isMobile ? "50px 0" : "100px 0",
+                    width: isMobile ? "95%" : "90%",
+                    maxWidth: '1200px',
+                    textAlign: isMobile ? 'center' : 'left',
+                    padding: isMobile ? "0 10px" : 0
+                }}
+            >
                 <h1 style={{
                     fontSize: "clamp(32px, 6vw, 50px)",
                     lineHeight: '1.3'
@@ -478,9 +564,9 @@ const Services = () => {
                     We create experiences that fuel connections between <br />
                     brands and the people vital to their success.
                 </p>
-            </div>
+            </motion.div>
         </div>
     )
 }
 
-export default Services
+export default Services;

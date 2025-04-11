@@ -1,18 +1,32 @@
-import React from 'react'
-import spiderman from "../assets/about/spiderman.jpg"
-import Mobile from "../assets/about/mobile.jpeg"
-import Food from "../assets/about/food.jpeg"
-import game from "../assets/about/game.jpeg"
-import hacking from "../assets/about/hacking.jpeg"
-import Women from "../assets/about/women.jpeg"
-import men from "../assets/about/men.jpeg"
-import boy from "../assets/about/boy.jpeg"
-import boxing from "../assets/about/boxing.jpeg"
-import music from "../assets/about/music.jpeg"
+import React from 'react';
+import { motion } from 'framer-motion';
+import spiderman from "../assets/about/spiderman.jpg";
+import Mobile from "../assets/about/mobile.jpeg";
+import Food from "../assets/about/food.jpeg";
+import game from "../assets/about/game.jpeg";
+import hacking from "../assets/about/hacking.jpeg";
+import Women from "../assets/about/women.jpeg";
+import men from "../assets/about/men.jpeg";
+import boy from "../assets/about/boy.jpeg";
+import boxing from "../assets/about/boxing.jpeg";
+import music from "../assets/about/music.jpeg";
 
 const About = () => {
+    const imageVariants = (index) => {
+        const direction = index % 4; // Cycle through 4 directions
+        switch (direction) {
+            case 0: return { initial: { x: '-100%', opacity: 0 }, animate: { x: 0, opacity: 1 } }; // Left
+            case 1: return { initial: { y: '-100%', opacity: 0 }, animate: { y: 0, opacity: 1 } }; // Top
+            case 2: return { initial: { x: '100%', opacity: 0 }, animate: { x: 0, opacity: 1 } };  // Right
+            case 3: return { initial: { y: '100%', opacity: 0 }, animate: { y: 0, opacity: 1 } };  // Bottom
+            default: return { initial: { opacity: 0 }, animate: { opacity: 1 } };
+        }
+    };
+
+    const transition = { duration: 0.5, ease: 'easeInOut' };
+
     return (
-        <div style={aboutContainer}>
+        <motion.div style={aboutContainer} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
             <div style={headerSection}>
                 <p style={aboutUsText}>About Us</p>
             </div>
@@ -23,22 +37,22 @@ const About = () => {
                 </p>
             </div>
             <div style={imageRow}>
-                <img src={spiderman} alt="" style={imageStyle} />
-                <img src={Mobile} alt="" style={imageStyle} />
+                <motion.img src={spiderman} alt="" style={imageStyle} variants={imageVariants(0)} initial="initial" animate="animate" transition={transition} />
+                <motion.img src={Mobile} alt="" style={imageStyle} variants={imageVariants(1)} initial="initial" animate="animate" transition={transition} />
                 <div style={philosophySection}>
                     <h3 style={philosophyTitle}> Our philosophy</h3>
                     <p style={philosophyText}>The Famesters influencer marketing agency exists to bring actual results for businesses and do the work fast, effectively, and smartly. We are a team of professionals, passionate about influencer marketing campaigns that actually have a meaning and a real impact. We nurture genuine connections and strengthen the bonds between brands and influencers, and ultimately – brands and their target audiences.</p>
                 </div>
             </div>
             <div style={imageRow}>
-                <img src={Food} alt="" style={imageStyle} />
-                <img src={game} alt="" style={imageStyle} />
-                <img src={hacking} alt="" style={imageStyle} />
+                <motion.img src={Food} alt="" style={imageStyle} variants={imageVariants(2)} initial="initial" animate="animate" transition={transition} />
+                <motion.img src={game} alt="" style={imageStyle} variants={imageVariants(3)} initial="initial" animate="animate" transition={transition} />
+                <motion.img src={hacking} alt="" style={imageStyle} variants={imageVariants(4)} initial="initial" animate="animate" transition={transition} />
             </div>
             <div style={imageRow}>
-                <img src={Women} alt="" style={imageStyle} />
-                <img src={men} alt="" style={imageStyle} />
-                <img src={boy} alt="" style={imageStyle} />
+                <motion.img src={Women} alt="" style={imageStyle} variants={imageVariants(5)} initial="initial" animate="animate" transition={transition} />
+                <motion.img src={men} alt="" style={imageStyle} variants={imageVariants(6)} initial="initial" animate="animate" transition={transition} />
+                <motion.img src={boy} alt="" style={imageStyle} variants={imageVariants(7)} initial="initial" animate="animate" transition={transition} />
             </div>
             <div style={lastRow}>
                 <div style={lastParagraphSection}>
@@ -56,40 +70,39 @@ const About = () => {
                         benefits.
                     </p>
                 </div>
-                <img src={boxing} alt="" style={imageStyle} />
-                <img src={music} alt="" style={imageStyle} />
+                <motion.img src={boxing} alt="" style={imageStyle} variants={imageVariants(8)} initial="initial" animate="animate" transition={transition} />
+                <motion.img src={music} alt="" style={imageStyle} variants={imageVariants(9)} initial="initial" animate="animate" transition={transition} />
             </div>
-        </div >
+        </motion.div >
     )
 }
 
-// Here are the new styles to make it responsive!
 const aboutContainer = {
     background: "black",
     color: "white",
-    padding: "20px", // Add some padding around the edges
+    padding: "20px",
 };
 
 const headerSection = {
-    height: "auto", // Let the height adjust to the content
-    padding: "40px 20px", // Add padding top and bottom, and some side padding
-    textAlign: "center", // Center the "About Us" text
+    height: "auto",
+    padding: "40px 20px",
+    textAlign: "center",
 };
 
 const aboutUsText = {
-    position: "static", // No need for absolute positioning anymore
-    marginTop: "0", // Reset top margin
+    position: "static",
+    marginTop: "0",
     color: "white",
     fontWeight: "bold",
-    fontSize: "24px", // Make it a bit bigger
+    fontSize: "24px",
 };
 
 const industriesTitle = {
-    margin: "20px auto", // Center the title
+    margin: "20px auto",
     fontWeight: "bold",
     fontSize: "28px",
-    textAlign: "center", // Center the title
-    maxWidth: "80%", // Don't let it get too wide
+    textAlign: "center",
+    maxWidth: "80%",
 };
 
 const industriesHighlight = {
@@ -97,9 +110,9 @@ const industriesHighlight = {
 };
 
 const descriptionSection = {
-    margin: "20px auto", // Center the description
-    maxWidth: "80%", // Keep it readable
-    textAlign: "center", // Center the text
+    margin: "20px auto",
+    maxWidth: "80%",
+    textAlign: "center",
 };
 
 const descriptionText = {
@@ -112,24 +125,24 @@ const descriptionText = {
 
 const imageRow = {
     display: "flex",
-    flexWrap: "wrap", // Allow images to wrap to the next line
-    margin: "20px auto", // Center the row
-    gap: "15px", // Space between images
-    maxWidth: "90%", // Don't let the row get too wide
-    justifyContent: "center", // Center images in the row
+    flexWrap: "wrap",
+    margin: "20px auto",
+    gap: "15px",
+    maxWidth: "90%",
+    justifyContent: "center",
 };
 
 const imageStyle = {
-    width: "100%", // Make images take full width of their container
-    maxWidth: "350px", // But don't let them get bigger than 350px
-    height: "auto", // Maintain aspect ratio
-    marginBottom: "15px", // Space below each image
+    width: "100%",
+    maxWidth: "350px",
+    height: "auto",
+    marginBottom: "15px",
 };
 
 const philosophySection = {
-    flex: "1 1 350px", // Allow it to grow and shrink, with a base width
+    flex: "1 1 350px",
     maxWidth: "350px",
-    margin: "0 0", // Center the section
+    margin: "0 0",
 };
 
 const philosophyTitle = {
@@ -153,7 +166,7 @@ const lastRow = {
     gap: "15px",
     maxWidth: "90%",
     justifyContent: "center",
-    alignItems: "stretch", // Make items the same height
+    alignItems: "stretch",
 };
 
 const lastParagraphSection = {
@@ -171,4 +184,4 @@ const lastParagraphText = {
     width: "100%",
 };
 
-export default About
+export default About;

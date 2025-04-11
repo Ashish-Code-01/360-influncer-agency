@@ -1,15 +1,30 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import Logo from "../assets/logo.png";
 
 function Navbar() {
     return (
         <nav style={navbarStyle}>
-            <div style={logoStyle}>
+            <motion.div
+                style={logoStyle}
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+            >
                 <span style={{ fontWeight: 'normal' }}>
-                    <img src={Logo} alt="Logo" style={logoImageStyle} />
+                    <img
+                        src={Logo}
+                        alt="Logo"
+                        style={logoImageStyle}
+                    />
                 </span>
-            </div>
-            <ul style={linksStyle}>
+            </motion.div>
+            <motion.ul
+                style={linksStyle}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+            >
                 <li>
                     <a href="/" style={linkStyle}>
                         Home
@@ -65,8 +80,15 @@ function Navbar() {
                         Testomonials
                     </a>
                 </li>
-            </ul>
-            <button style={buttonStyle}>Book A Demo</button>
+            </motion.ul>
+            <motion.button
+                style={buttonStyle}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            >
+                Book A Demo
+            </motion.button>
         </nav>
     );
 }
@@ -106,7 +128,8 @@ const linksStyle = {
     fontWeight: "bold",
     marginBottom: '10px', // Add some space below the links on smaller screens
     justifyContent: 'center',
-    flexWrap: 'wrap', gap: "20px"
+    flexWrap: 'wrap',
+    gap: "20px"
 };
 
 const linkStyle = {

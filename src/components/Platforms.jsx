@@ -1,13 +1,32 @@
+import React from 'react';
+import { motion } from 'framer-motion';
 
-import { hover } from 'framer-motion'
-import React from 'react'
+const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeInOut" } },
+    hover: { scale: 1.03, boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)", transition: { duration: 0.2 } },
+};
 
 const Platforms = () => {
     return (
-        <div style={{ background: "black", display: "flex", flexDirection: "column", alignItems: 'center' }}>
-            <h1>Social Media</h1>
+        <div style={{ background: "black", display: "flex", flexDirection: "column", alignItems: 'center', paddingBottom: '30px' }}>
+            <motion.h1
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                style={{ color: 'white' }}
+            >
+                Social Media
+            </motion.h1>
 
-            <h2 style={{ marginTop: "30px" }}>INSTAGRAM</h2>
+            <motion.h2
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                style={{ marginTop: "30px", color: 'white' }}
+            >
+                INSTAGRAM
+            </motion.h2>
 
             <div style={{
                 display: "flex",
@@ -21,13 +40,13 @@ const Platforms = () => {
             }}>
                 {[
                     {
-                        title: "Leverage Instagram influencer marketing to increase your ROI and drive sales.  ",
+                        title: "Leverage Instagram influencer marketing to increase your ROI and drive sales.  ",
                         content: "The Trend Fluence, we’re here to handle the research, connect you with the right Instagram influencers at the best rates, and oversee your next impactful influencer marketing campaign.",
                         bgColor: "rgba(0, 237, 231, 1)",
                         textColor: "black"
                     },
                     {
-                        title: `Why partner with Trend Fluence for your Instagram Influencer Marketing?  TAILORED STRATEGY FOR EVERY BRAND `,
+                        title: `Why partner with Trend Fluence for your Instagram Influencer Marketing?  TAILORED STRATEGY FOR EVERY BRAND `,
                         content: " No matter the industry, Instagram influencer marketing can work wonders for your business. Trend Fluence specializes in crafting personalized strategies that perfectly showcase your brand, product, or service, maximizing your returns from influencer collaborations.",
                         bgColor: "white",
                         textColor: "black",
@@ -46,20 +65,26 @@ const Platforms = () => {
                         textColor: "black"
                     }
                 ].map((feature, index) => (
-                    <div key={index} style={{
-                        width: "100%",
-                        maxWidth: "600px",
-                        background: feature.bgColor,
-                        padding: "30px",
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "20px",
-                        borderRadius: "20px",
-                        position: 'relative',
-                        color: feature.textColor,
-                        height: "280px",
-                        overflow: feature.overflow
-                    }}>
+                    <motion.div
+                        key={index}
+                        variants={cardVariants}
+                        initial="hidden"
+                        animate="visible"
+                        whileHover="hover"
+                        style={{
+                            width: "100%",
+                            maxWidth: "600px",
+                            background: feature.bgColor,
+                            padding: "30px",
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: "20px",
+                            borderRadius: "20px",
+                            position: 'relative',
+                            color: feature.textColor,
+                            height: "280px",
+                            overflow: feature.overflow
+                        }}>
                         <h2 style={{
                             color: feature.textColor,
                             fontSize: 'clamp(18px, 3vw, 24px)'
@@ -76,10 +101,18 @@ const Platforms = () => {
                             {feature.content}
                         </p>
 
-                    </div>
+                    </motion.div>
                 ))}
             </div>
-            <h2 style={{ marginTop: "30px" }}>YOUTUBE</h2>
+            <motion.h2
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                style={{ marginTop: "30px", color: 'white' }}
+
+            >
+                YOUTUBE
+            </motion.h2>
 
             <div style={{
                 display: "flex",
@@ -99,7 +132,7 @@ const Platforms = () => {
                         textColor: "black"
                     },
                     {
-                        title: `Reasons Why Brands Opt for Trend Fluence in YouTube Influencer Marketing  IDEAL FOR  ANY INDUSTRY `,
+                        title: `Reasons Why Brands Opt for Trend Fluence in YouTube Influencer Marketing  IDEAL FOR  ANY INDUSTRY `,
                         content: "We collaborate with brands across various sectors, including gaming, fintech, mobile, digital services, e-commerce, and more. Whether you're a startup, growing business, or established enterprise, our tailored approach ensures you get the most out of influencer marketing.",
                         bgColor: "white",
                         textColor: "black",
@@ -118,20 +151,26 @@ const Platforms = () => {
                         textColor: "black"
                     }
                 ].map((feature, index) => (
-                    <div key={index} style={{
-                        width: "100%",
-                        maxWidth: "600px",
-                        background: feature.bgColor,
-                        padding: "30px",
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "20px",
-                        borderRadius: "20px",
-                        position: 'relative',
-                        color: feature.textColor,
-                        height: "280px",
-                        overflow: feature.overflow || "hidden",
-                    }}>
+                    <motion.div
+                        key={index}
+                        variants={cardVariants}
+                        initial="hidden"
+                        animate="visible"
+                        whileHover="hover"
+                        style={{
+                            width: "100%",
+                            maxWidth: "600px",
+                            background: feature.bgColor,
+                            padding: "30px",
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: "20px",
+                            borderRadius: "20px",
+                            position: 'relative',
+                            color: feature.textColor,
+                            height: "280px",
+                            overflow: feature.overflow || "hidden",
+                        }}>
                         <h2 style={{
                             color: feature.textColor,
                             fontSize: 'clamp(18px, 3vw, 24px)'
@@ -148,12 +187,19 @@ const Platforms = () => {
                             {feature.content}
                         </p>
 
-                    </div>
+                    </motion.div>
                 ))}
             </div>
 
+            <motion.h2
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                style={{ marginTop: "30px", color: 'white' }}
 
-            <h2 style={{ marginTop: "30px" }}>TikTok</h2>
+            >
+                TikTok
+            </motion.h2>
 
             <div style={{
                 display: "flex",
@@ -173,7 +219,7 @@ const Platforms = () => {
                         textColor: "black"
                     },
                     {
-                        title: `Trend Fluence influencer marketing agency understands the secret to dominating the market through TikTok.  PERFECT FOR COMPANIES OF ALL SIZES
+                        title: `Trend Fluence influencer marketing agency understands the secret to dominating the market through TikTok.  PERFECT FOR COMPANIES OF ALL SIZES
 `,
                         content: " We blend our expertise with current trends to help businesses of any scale achieve significant visibility on TikTok. By crafting innovative strategies alongside influencers, we ensure your campaign stands out. Together, we and our clients set trends and win the hearts of audiences across the globe with TikTok influencer marketing.",
                         bgColor: "white",
@@ -193,20 +239,26 @@ const Platforms = () => {
                         textColor: "black"
                     }
                 ].map((feature, index) => (
-                    <div key={index} style={{
-                        width: "100%",
-                        maxWidth: "600px",
-                        background: feature.bgColor,
-                        padding: "30px",
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "20px",
-                        borderRadius: "20px",
-                        position: 'relative',
-                        color: feature.textColor,
-                        height: "280px",
-                        overflow: feature.overflow
-                    }}>
+                    <motion.div
+                        key={index}
+                        variants={cardVariants}
+                        initial="hidden"
+                        animate="visible"
+                        whileHover="hover"
+                        style={{
+                            width: "100%",
+                            maxWidth: "600px",
+                            background: feature.bgColor,
+                            padding: "30px",
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: "20px",
+                            borderRadius: "20px",
+                            position: 'relative',
+                            color: feature.textColor,
+                            height: "280px",
+                            overflow: feature.overflow
+                        }}>
                         <h2 style={{
                             color: feature.textColor,
                             fontSize: 'clamp(18px, 3vw, 24px)'
@@ -223,10 +275,18 @@ const Platforms = () => {
                             {feature.content}
                         </p>
 
-                    </div>
+                    </motion.div>
                 ))}
             </div>
-            <h1 style={{ marginTop: "30px" }}> We work with Twitch , Kick and Streaming Networks !</h1>
+            <motion.h1
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                style={{ marginTop: "30px", color: 'white' }}
+
+            >
+                We work with Twitch , Kick and Streaming Networks !
+            </motion.h1>
         </div>
 
 

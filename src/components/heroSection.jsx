@@ -1,17 +1,38 @@
-import React from 'react'
-import Paladora from "../assets/Paladora.png"
-import Homne from "../assets/homne.png"
-import HuranTV from "../assets/HuranTV.png"
-import Matsuri from "../assets/Matsuri.png"
-import Radical from "../assets/Radical.png"
-import WeiboTV from "../assets/WeiboTV.jpeg"
-import UserAvatar from "../assets/users.png"
-import Button from "../assets/Button.png"
-import background from "../assets/backgroung.jpeg"
+import React from 'react';
+import { motion } from 'framer-motion';
+import Paladora from "../assets/Paladora.png";
+import Homne from "../assets/homne.png";
+import HuranTV from "../assets/HuranTV.png";
+import Matsuri from "../assets/Matsuri.png";
+import Radical from "../assets/Radical.png";
+import WeiboTV from "../assets/WeiboTV.jpeg";
+import UserAvatar from "../assets/users.png";
+import Button from "../assets/Button.png";
+import background from "../assets/backgroung.jpeg";
 
 const HeroSection = () => {
+    const imageVariants = {
+        initial: { x: '100%', opacity: 0 },
+        animate: { x: 0, opacity: 1, transition: { duration: 0.5, ease: 'easeInOut' } },
+    };
+
+    const buttonVariants = {
+        initial: { x: '100%', opacity: 0 },
+        animate: { x: 0, opacity: 1, transition: { duration: 0.6, ease: 'easeInOut', delay: 0.2 } },
+    };
+
+    const backgroundVariants = {
+        initial: { x: '100%', opacity: 0 },
+        animate: { x: 0, opacity: 1, transition: { duration: 0.7, ease: 'easeInOut', delay: 0.3 } },
+    };
+
+    const clientLogoVariants = {
+        initial: { x: '100%', opacity: 0 },
+        animate: { x: 0, opacity: 1, transition: { duration: 0.4, ease: 'easeInOut' } },
+    };
+
     return (
-        <div style={{ backgroundColor: "black", color: "white" }}>
+        <div style={{ backgroundColor: "black", color: "white", overflowX: 'hidden' }}>
             {/* Hero Content */}
             <div style={{
                 maxWidth: "1440px",
@@ -80,10 +101,13 @@ const HeroSection = () => {
                             360 ° Influencer - a creative agency specializing in making videos for strategy, marketing and production.
                         </div>
                         <div style={{ display: "flex", alignItems: "center" }}>
-                            <img
+                            <motion.img
                                 src={UserAvatar}
                                 alt="UserAvatar"
                                 style={{ width: "80px" }}
+                                variants={imageVariants}
+                                initial="initial"
+                                animate="animate"
                             />
                             <span style={{
                                 marginLeft: "15px",
@@ -100,20 +124,25 @@ const HeroSection = () => {
                 </div>
 
                 {/* Button */}
-                <div style={{
-                    position: "absolute",
-                    right: "20px",
-                    bottom: "40px",
-                    zIndex: 1,
-                    "@media (min-width: 768px)": {
-                        right: "40px",
-                        bottom: "80px"
-                    },
-                    "@media (min-width: 1024px)": {
-                        right: "100px",
-                        bottom: "120px"
-                    }
-                }}>
+                <motion.div
+                    style={{
+                        position: "absolute",
+                        right: "20px",
+                        bottom: "40px",
+                        zIndex: 1,
+                        "@media (min-width: 768px)": {
+                            right: "40px",
+                            bottom: "80px"
+                        },
+                        "@media (min-width: 1024px)": {
+                            right: "100px",
+                            bottom: "120px"
+                        }
+                    }}
+                    variants={buttonVariants}
+                    initial="initial"
+                    animate="animate"
+                >
                     <img
                         src={Button}
                         alt="Button"
@@ -125,20 +154,25 @@ const HeroSection = () => {
                             }
                         }}
                     />
-                </div>
+                </motion.div>
 
                 {/* Background Image */}
-                <div style={{
-                    marginTop: "40px",
-                    position: "relative",
-                    width: "100%",
-                    paddingTop: "56.25%", // 16:9 aspect ratio
-                    overflow: "hidden",
-                    borderRadius: "20px",
-                    "@media (min-width: 768px)": {
-                        marginTop: "60px"
-                    }
-                }}>
+                <motion.div
+                    style={{
+                        marginTop: "40px",
+                        position: "relative",
+                        width: "100%",
+                        paddingTop: "56.25%", // 16:9 aspect ratio
+                        overflow: "hidden",
+                        borderRadius: "20px",
+                        "@media (min-width: 768px)": {
+                            marginTop: "60px"
+                        }
+                    }}
+                    variants={backgroundVariants}
+                    initial="initial"
+                    animate="animate"
+                >
                     <img
                         src={background}
                         alt="Background"
@@ -151,7 +185,7 @@ const HeroSection = () => {
                             objectFit: "cover"
                         }}
                     />
-                </div>
+                </motion.div>
             </div>
 
             {/* Clients Section */}
@@ -191,14 +225,21 @@ const HeroSection = () => {
                         { logo: Matsuri, name: "Matsuri" },
                         { logo: Radical, name: "Radical" }
                     ].map((client, index) => (
-                        <div key={index} style={{
-                            display: "flex",
-                            alignItems: "center",
-                            minWidth: "120px",
-                            "@media (min-width: 768px)": {
-                                minWidth: "auto"
-                            }
-                        }}>
+                        <motion.div
+                            key={index}
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                minWidth: "120px",
+                                "@media (min-width: 768px)": {
+                                    minWidth: "auto"
+                                }
+                            }}
+                            variants={clientLogoVariants}
+                            initial="initial"
+                            animate="animate"
+                            transition={{ delay: index * 0.1 }} // Optional: stagger the client logo animations
+                        >
                             <img
                                 src={client.logo}
                                 alt={client.name}
@@ -222,12 +263,12 @@ const HeroSection = () => {
                             }}>
                                 {client.name}
                             </span>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default HeroSection
+export default HeroSection;
