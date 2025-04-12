@@ -2,13 +2,7 @@
     margin: 0;
     padding: 0;
     color: white;
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }

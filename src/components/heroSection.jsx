@@ -1,11 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Paladora from "../assets/Paladora.png";
-import Homne from "../assets/homne.png";
-import HuranTV from "../assets/HuranTV.png";
-import Matsuri from "../assets/Matsuri.png";
-import Radical from "../assets/Radical.png";
-import WeiboTV from "../assets/WeiboTV.jpeg";
+
+import Win1 from "../assets/hero/1win.jpg";
+import Bet1x from "../assets/hero/1xbet.png";
+import BattetBet from "../assets/hero/batterybet.PNG";
+import Iqoption from "../assets/hero/iqoption.PNG";
+import PinUp from "../assets/hero/pinup.png";
+import Pocket from "../assets/hero/pocket.png";
+
 import UserAvatar from "../assets/users.png";
 import Button from "../assets/Button.png";
 import background from "../assets/backgroung.jpeg";
@@ -29,6 +31,27 @@ const HeroSection = () => {
     const clientLogoVariants = {
         initial: { x: '100%', opacity: 0 },
         animate: { x: 0, opacity: 1, transition: { duration: 0.4, ease: 'easeInOut' } },
+    };
+
+    const clientsData = [
+        { logo: Win1, name: "1Win" },
+        { logo: Bet1x, name: "1xBet" },
+        { logo: BattetBet, name: "Battet Bet" },
+        { logo: Iqoption, name: "Iq-option" },
+        { logo: PinUp, name: "Pin Up" },
+        { logo: Pocket, name: "Pocket options" },
+    ];
+
+    const clientSliderVariants = {
+        initial: { x: 0 },
+        animate: {
+            x: `-${clientsData.length * 140}px`, // Adjust 140px based on logo width + margin
+            transition: {
+                repeat: Infinity,
+                duration: 10, // Adjust duration for speed
+                ease: "linear",
+            },
+        },
     };
 
     return (
@@ -193,7 +216,8 @@ const HeroSection = () => {
                 padding: "60px 20px",
                 background: "black",
                 maxWidth: "1440px",
-                margin: "0 auto"
+                margin: "0 auto",
+                overflow: "hidden" // Hide overflowing logos for the animation
             }}>
                 <p style={{
                     color: "rgba(0, 237, 231, 1)",
@@ -207,45 +231,35 @@ const HeroSection = () => {
                     More than 1 million people across 200+ companies choose 360 ° Influencer
                 </p>
 
-                <div style={{
-                    display: "flex",
-                    flexWrap: "wrap",
-                    justifyContent: "center",
-                    gap: "20px",
-                    "@media (min-width: 768px)": {
-                        gap: "24px",
-                        flexWrap: "nowrap"
-                    }
-                }}>
-                    {[
-                        { logo: Paladora, name: "Paladora" },
-                        { logo: WeiboTV, name: "WeiboTV" },
-                        { logo: Homne, name: "Homne" },
-                        { logo: HuranTV, name: "HuranTV" },
-                        { logo: Matsuri, name: "Matsuri" },
-                        { logo: Radical, name: "Radical" }
-                    ].map((client, index) => (
-                        <motion.div
+                <motion.div
+                    style={{
+                        display: "flex",
+                        flexWrap: "nowrap", 
+                        width: "100%",
+                    }}
+                    variants={clientSliderVariants}
+                    initial="initial"
+                    animate="animate"
+                >
+                    {clientsData.map((client, index) => (
+                        <div
                             key={index}
                             style={{
                                 display: "flex",
                                 alignItems: "center",
                                 minWidth: "120px",
+                                marginRight: "20px",
                                 "@media (min-width: 768px)": {
                                     minWidth: "auto"
                                 }
                             }}
-                            variants={clientLogoVariants}
-                            initial="initial"
-                            animate="animate"
-                            transition={{ delay: index * 0.1 }} // Optional: stagger the client logo animations
                         >
                             <img
                                 src={client.logo}
                                 alt={client.name}
                                 style={{
-                                    width: "24px",
-                                    height: "24px",
+                                    width: "70px",
+                                    height: "30px",
                                     marginRight: "10px",
                                     "@media (min-width: 768px)": {
                                         width: "32px",
@@ -263,9 +277,124 @@ const HeroSection = () => {
                             }}>
                                 {client.name}
                             </span>
-                        </motion.div>
+                        </div>
                     ))}
-                </div>
+                    {/* Duplicate logos for seamless loop */}
+                    {clientsData.map((client, index) => (
+                        <div
+                            key={`duplicate-${index}`}
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                minWidth: "120px",
+                                marginRight: "20px",
+                                "@media (min-width: 768px)": {
+                                    minWidth: "auto"
+                                }
+                            }}
+                        >
+                            <img
+                                src={client.logo}
+                                alt={client.name}
+                                style={{
+                                    width: "70px",
+                                    height: "30px",
+                                    marginRight: "10px",
+                                    "@media (min-width: 768px)": {
+                                        width: "32px",
+                                        height: "32px"
+                                    }
+                                }}
+                            />
+                            <span style={{
+                                color: "rgba(108, 114, 117, 1)",
+                                fontSize: "12px",
+                                fontWeight: "bold",
+                                "@media (min-width: 768px)": {
+                                    fontSize: "16px"
+                                }
+                            }}>
+                                {client.name}
+                            </span>
+                        </div>
+                    ))}
+                    {clientsData.map((client, index) => (
+                        <div
+                            key={`duplicate-${index}`}
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                minWidth: "120px",
+                                marginRight: "20px",
+                                "@media (min-width: 768px)": {
+                                    minWidth: "auto"
+                                }
+                            }}
+                        >
+                            <img
+                                src={client.logo}
+                                alt={client.name}
+                                style={{
+                                    width: "70px",
+                                    height: "30px",
+                                    marginRight: "10px",
+                                    "@media (min-width: 768px)": {
+                                        width: "32px",
+                                        height: "32px"
+                                    }
+                                }}
+                            />
+                            <span style={{
+                                color: "rgba(108, 114, 117, 1)",
+                                fontSize: "12px",
+                                fontWeight: "bold",
+                                "@media (min-width: 768px)": {
+                                    fontSize: "16px"
+                                }
+                            }}>
+                                {client.name}
+                            </span>
+                        </div>
+                    ))}
+                    {clientsData.map((client, index) => (
+                        <div
+                            key={`duplicate-${index}`}
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                minWidth: "120px",
+                                marginRight: "20px",
+                                "@media (min-width: 768px)": {
+                                    minWidth: "auto"
+                                }
+                            }}
+                        >
+                            <img
+                                src={client.logo}
+                                alt={client.name}
+                                style={{
+                                    width: "70px",
+                                    height: "30px",
+                                    marginRight: "10px",
+                                    "@media (min-width: 768px)": {
+                                        width: "32px",
+                                        height: "32px"
+                                    }
+                                }}
+                            />
+                            <span style={{
+                                color: "rgba(108, 114, 117, 1)",
+                                fontSize: "12px",
+                                fontWeight: "bold",
+                                "@media (min-width: 768px)": {
+                                    fontSize: "16px"
+                                }
+                            }}>
+                                {client.name}
+                            </span>
+                        </div>
+                    ))}
+                </motion.div>
             </div>
         </div>
     );

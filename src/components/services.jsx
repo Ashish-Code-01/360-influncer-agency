@@ -63,7 +63,7 @@ const Services = () => {
         }}>
             {/* Header Section */}
             <motion.div
-                initial={{ opacity: 0, y: -20 }}
+                initial={{ opacity: 0, y: -20, }}
                 animate={controls}
                 style={{
                     textAlign: 'center',
@@ -108,12 +108,11 @@ const Services = () => {
             <motion.div
                 ref={ref}
                 initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
                 style={{
                     backgroundColor: 'black',
                     color: 'white',
-                    padding: isMobile ? '10px' : '20px',
-                    width: isMobile ? "95%" : "90%",
-                    maxWidth: "1000px",
                     marginTop: isMobile ? "20px" : "40px"
                 }}
             >

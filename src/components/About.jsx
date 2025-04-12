@@ -10,6 +10,7 @@ import men from "../assets/about/men.jpeg";
 import boy from "../assets/about/boy.jpeg";
 import boxing from "../assets/about/boxing.jpeg";
 import music from "../assets/about/music.jpeg";
+import { width } from '@fortawesome/free-brands-svg-icons/fa42Group';
 
 const About = () => {
     const imageVariants = (index) => {
@@ -23,7 +24,7 @@ const About = () => {
         }
     };
 
-    const transition = { duration: 0.5, ease: 'easeInOut' };
+    const transition = { duration: 0.5, ease: 'easeInOut', };
 
     return (
         <motion.div style={aboutContainer} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
@@ -37,22 +38,22 @@ const About = () => {
                 </p>
             </div>
             <div style={imageRow}>
-                <motion.img src={spiderman} alt="" style={imageStyle} variants={imageVariants(0)} initial="initial" animate="animate" transition={transition} />
-                <motion.img src={Mobile} alt="" style={imageStyle} variants={imageVariants(1)} initial="initial" animate="animate" transition={transition} />
+                <motion.img src={spiderman} alt="" style={imageStyle} variants={imageVariants(0)} initial="initial" animate="animate" transition={transition} whileHover={{ scale: 1.02 }} />
+                <motion.img src={Mobile} alt="" style={imageStyle} variants={imageVariants(1)} initial="initial" animate="animate" transition={transition} whileHover={{ scale: 1.02 }} />
                 <div style={philosophySection}>
                     <h3 style={philosophyTitle}> Our philosophy</h3>
                     <p style={philosophyText}>The Famesters influencer marketing agency exists to bring actual results for businesses and do the work fast, effectively, and smartly. We are a team of professionals, passionate about influencer marketing campaigns that actually have a meaning and a real impact. We nurture genuine connections and strengthen the bonds between brands and influencers, and ultimately – brands and their target audiences.</p>
                 </div>
             </div>
             <div style={imageRow}>
-                <motion.img src={Food} alt="" style={imageStyle} variants={imageVariants(2)} initial="initial" animate="animate" transition={transition} />
-                <motion.img src={game} alt="" style={imageStyle} variants={imageVariants(3)} initial="initial" animate="animate" transition={transition} />
-                <motion.img src={hacking} alt="" style={imageStyle} variants={imageVariants(4)} initial="initial" animate="animate" transition={transition} />
+                <motion.img src={Food} alt="" style={imageStyle} variants={imageVariants(2)} initial="initial" animate="animate" transition={transition} whileHover={{ scale: 1.02 }} />
+                <motion.img src={game} alt="" style={imageStyle} variants={imageVariants(3)} initial="initial" animate="animate" transition={transition} whileHover={{ scale: 1.02 }} />
+                <motion.img src={hacking} alt="" style={imageStyle} variants={imageVariants(4)} initial="initial" animate="animate" transition={transition} whileHover={{ scale: 1.02 }} />
             </div>
             <div style={imageRow}>
-                <motion.img src={Women} alt="" style={imageStyle} variants={imageVariants(5)} initial="initial" animate="animate" transition={transition} />
-                <motion.img src={men} alt="" style={imageStyle} variants={imageVariants(6)} initial="initial" animate="animate" transition={transition} />
-                <motion.img src={boy} alt="" style={imageStyle} variants={imageVariants(7)} initial="initial" animate="animate" transition={transition} />
+                <motion.img src={Women} alt="" style={imageStyle} variants={imageVariants(5)} initial="initial" animate="animate" transition={transition} whileHover={{ scale: 1.02 }} />
+                <motion.img src={men} alt="" style={imageStyle} variants={imageVariants(6)} initial="initial" animate="animate" transition={transition} whileHover={{ scale: 1.02 }} />
+                <motion.img src={boy} alt="" style={imageStyle} variants={imageVariants(7)} initial="initial" animate="animate" transition={transition} whileHover={{ scale: 1.02 }} />
             </div>
             <div style={lastRow}>
                 <div style={lastParagraphSection}>
@@ -70,8 +71,8 @@ const About = () => {
                         benefits.
                     </p>
                 </div>
-                <motion.img src={boxing} alt="" style={imageStyle} variants={imageVariants(8)} initial="initial" animate="animate" transition={transition} />
-                <motion.img src={music} alt="" style={imageStyle} variants={imageVariants(9)} initial="initial" animate="animate" transition={transition} />
+                <motion.img src={boxing} alt="" style={imageStyle} variants={imageVariants(8)} initial="initial" animate="animate" transition={transition} whileHover={{ scale: 1.02 }} />
+                <motion.img src={music} alt="" style={imageStyle} variants={imageVariants(9)} initial="initial" animate="animate" transition={transition} whileHover={{ scale: 1.02 }} />
             </div>
         </motion.div >
     )
@@ -81,6 +82,7 @@ const aboutContainer = {
     background: "black",
     color: "white",
     padding: "20px",
+    fonstsize: "17px",
 };
 
 const headerSection = {
@@ -134,14 +136,14 @@ const imageRow = {
 
 const imageStyle = {
     width: "100%",
-    maxWidth: "350px",
+    maxWidth: "500px",
     height: "auto",
     marginBottom: "15px",
 };
 
 const philosophySection = {
     flex: "1 1 350px",
-    maxWidth: "350px",
+    maxWidth: "500px",
     margin: "0 0",
 };
 
@@ -157,6 +159,7 @@ const philosophyText = {
     letterSpacing: "0.5px",
     width: "100%",
     textAlign: "center",
+    maxWidth: "550px",
 };
 
 const lastRow = {
@@ -164,14 +167,13 @@ const lastRow = {
     flexWrap: "wrap",
     margin: "20px auto",
     gap: "15px",
-    maxWidth: "90%",
     justifyContent: "center",
     alignItems: "stretch",
 };
 
 const lastParagraphSection = {
     flex: "1 1 350px",
-    maxWidth: "350px",
+    maxWidth: "500px",
     margin: "0 0",
     textAlign: "center",
 };

@@ -47,14 +47,14 @@ const Portfolio = () => {
     };
 
     return (
-        <motion.div 
+        <motion.div
             className="portfolio-container"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
         >
             <div className="portfolio-header">
-                <motion.p 
+                <motion.p
                     className="portfolio-title"
                     initial={{ y: -20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
@@ -63,7 +63,7 @@ const Portfolio = () => {
                     PORTFOLIO
                 </motion.p>
                 <div className="portfolio-header-content">
-                    <motion.h1 
+                    <motion.h1
                         className="portfolio-headline"
                         initial={{ x: -50, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
@@ -72,50 +72,40 @@ const Portfolio = () => {
                         We create beautiful,<br />
                         <span className="highlight">practical works </span>
                     </motion.h1>
-                    <motion.button 
-                        className="portfolio-button"
-                        initial={{ x: 50, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        transition={{ duration: 0.3 }}
-                    >
-                        View All Work →
-                    </motion.button>
                 </div>
             </div>
 
-            <motion.div 
+            <motion.div
                 className="portfolio-slider-container"
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
             >
                 <Slider {...settings}>
-                    <PortfolioSlide 
-                        image={Background1} 
-                        title="Hublot Watch" 
-                        subtitle="play a video" 
+                    <PortfolioSlide
+                        image={Background1}
+                        title="Hublot Watch"
+                        subtitle="play a video"
                     />
-                    <PortfolioSlide 
-                        image={Background2} 
-                        title="Cool App Design" 
-                        subtitle="Mobile Application" 
+                    <PortfolioSlide
+                        image={Background2}
+                        title="Cool App Design"
+                        subtitle="Mobile Application"
                     />
-                    <PortfolioSlide 
-                        image={Background3} 
-                        title="Pizza Company" 
-                        subtitle="play a Video" 
+                    <PortfolioSlide
+                        image={Background3}
+                        title="Pizza Company"
+                        subtitle="play a Video"
                     />
-                    <PortfolioSlide 
-                        image={Background4} 
-                        title="Chanel Promotion" 
-                        subtitle="play a Video" 
+                    <PortfolioSlide
+                        image={Background4}
+                        title="Chanel Promotion"
+                        subtitle="play a Video"
                     />
-                    <PortfolioSlide 
-                        image={Background5} 
-                        title="Logistics Promo" 
-                        subtitle="play a Video" 
+                    <PortfolioSlide
+                        image={Background5}
+                        title="Logistics Promo"
+                        subtitle="play a Video"
                     />
                 </Slider>
             </motion.div>
@@ -126,7 +116,7 @@ const Portfolio = () => {
 // Slide component with animations
 const PortfolioSlide = ({ image, title, subtitle }) => {
     return (
-        <motion.div 
+        <motion.div
             className="portfolio-slide"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
@@ -140,7 +130,7 @@ const PortfolioSlide = ({ image, title, subtitle }) => {
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.5 }}
                 />
-                <motion.div 
+                <motion.div
                     className="slide-overlay"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -149,9 +139,9 @@ const PortfolioSlide = ({ image, title, subtitle }) => {
                     <p className="slide-title">{title}</p>
                     <p className="slide-subtitle">{subtitle}</p>
                 </motion.div>
-                <motion.div 
+                <motion.div
                     className="slide-play-button"
-                    whileHover={{ 
+                    whileHover={{
                         scale: 1.2,
                         backgroundColor: 'rgba(0, 237, 231, 0.9)'
                     }}

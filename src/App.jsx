@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
+import React from 'react'
 
 // Lazy load all components
 const Home = lazy(() => import("./views/Home.jsx"));
-const About = lazy(() => import("./views/About.jsx"));
 const Services = lazy(() => import("./views/Service.jsx"));
 const Portfolio = lazy(() => import("./views/Portfolio.jsx"));
 const Contactus = lazy(() => import("./views/Contactus.jsx"));
@@ -49,7 +49,6 @@ function App() {
       <Suspense fallback={<LoadingFallback />}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/portfolis" element={<Portfolio />} />
           <Route path="/contactus" element={<Contactus />} />

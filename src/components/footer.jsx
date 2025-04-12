@@ -37,7 +37,7 @@ function Footer() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <img src={Logo} alt="logo" height={70} />
+                        <img src={Logo} alt="logo" height={100} />
                     </motion.span>
                 </div>
                 <motion.p
@@ -46,7 +46,7 @@ function Footer() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                     360° Influencer Marketing Agency - a creative agency specializing in making videos <br /> for strategy, marketing and production.
+                    360° Influencer Marketing Agency - a creative agency specializing in making videos <br /> for strategy, marketing and production.
                 </motion.p>
                 <div style={socialIconsStyle}>
                     <motion.div

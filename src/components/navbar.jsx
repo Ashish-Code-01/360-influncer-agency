@@ -31,11 +31,6 @@ function Navbar() {
                     </a>
                 </li>
                 <li>
-                    <a href="about" style={linkStyle}>
-                        About Us
-                    </a>
-                </li>
-                <li>
                     <a href="services" style={linkStyle}>
                         Services
                     </a>

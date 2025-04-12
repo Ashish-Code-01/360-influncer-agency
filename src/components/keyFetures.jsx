@@ -123,7 +123,7 @@ function App() {
                     width: "100%",
                     maxWidth: "900px",
                     display: "flex",
-                    flexDirection: "column",
+                    flexDirection: window.innerWidth <= 700 ? 'column' : 'row',
                     gap: "20px",
                     padding: "0 20px",
                 }}>
@@ -141,6 +141,8 @@ function App() {
                             borderRadius: "20px",
                             padding: "20px",
                         }}
+                        whileHover={{ scale: 1.3 }}
+                        transition={{ duration: 0.5 }}
                     >
                         <h2 style={{ lineHeight: "1.3", color: "black", fontWeight: "900", fontSize: "1.2rem" }}>Make Your Product Stand Out <br />With A Custom Video</h2>
                         <p style={{ color: "black", fontSize: "0.85rem" }} >Make your Product launch stand out <br />from the rest.</p>
@@ -149,7 +151,6 @@ function App() {
                         variants={featureBoxVariants}
                         initial="hidden"
                         animate="visible"
-                        transition={{ delay: 0.2 }}
                         style={{
                             display: "flex",
                             flexDirection: "column",
@@ -161,6 +162,8 @@ function App() {
                             borderRadius: "20px",
                             padding: "20px",
                         }}
+                        whileHover={{ scale: 1.3 }}
+                        transition={{ duration: 0.5 }}
                     >
                         <h2 style={{ lineHeight: "1.3", color: "black", fontSize: "1.2rem" }}>Super-fast delivery <br />(Unlike most agencies)</h2>
                         <p style={{ color: "black", fontSize: "0.85rem" }} >No more slow agencies or freelancers. <br /> We send your video within 7 to 10 days.</p>
@@ -169,7 +172,6 @@ function App() {
                         variants={featureBoxVariants}
                         initial="hidden"
                         animate="visible"
-                        transition={{ delay: 0.4 }}
                         style={{
                             display: "flex",
                             flexDirection: "column",
@@ -181,6 +183,8 @@ function App() {
                             borderRadius: "20px",
                             padding: "20px",
                         }}
+                        whileHover={{ scale: 1.3 }}
+                        transition={{ duration: 0.5 }}
                     >
                         <h2 style={{ lineHeight: "1.3", color: "black", fontSize: "1.2rem" }}>Turn visitors into customers. <br /> Boost your conversion rate.</h2>
                         <p style={{ color: "black", fontSize: "0.85rem" }} >Showcase features of your SaaS to potential <br />users within seconds.</p>
@@ -189,7 +193,6 @@ function App() {
                         variants={featureBoxVariants}
                         initial="hidden"
                         animate="visible"
-                        transition={{ delay: 0.6 }}
                         style={{
                             display: "flex",
                             flexDirection: "column",
@@ -201,32 +204,15 @@ function App() {
                             borderRadius: "20px",
                             padding: "20px",
                         }}
+                        whileHover={{ scale: 1.3 }}
+                        transition={{ duration: 0.5 }}
+
                     >
                         <h2 style={{ lineHeight: "1.3", color: "black", fontSize: "1.2rem" }}>Script. Voiceover. Animation. <br />Start to finish.</h2>
                         <p style={{ color: "black", fontSize: "0.85rem" }} >We handle everything: researching, writing the <br /> script, voiceover & animation.</p>
                     </motion.div>
-                </main>
-            </motion.div>
-            <motion.div
-                style={{
-                    backgroundImage: `url(${image})`,
-                    display: "flex",
-                    justifyContent: "space-around",
-                    alignItems: "center",
-                    backgroundSize: "cover",
-                    width: '98%',
-                    height: "auto",
-                    padding: "20px",
-                    flexWrap: "wrap",
-                    gap: "15px",
-                }}
-                variants={logoVariants}
-                initial="hidden"
-                animate="visible"
-
-            >
-
-            </motion.div>
+                </main >
+            </motion.div >
         </>
     );
 }

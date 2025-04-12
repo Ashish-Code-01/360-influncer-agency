@@ -216,7 +216,8 @@ const Platforms = () => {
                         title: "TikTok Influencer Marketing: We turn your brand into a sensation ",
                         content: "Here’s why your brand needs a TikTok influencer marketing agency. TikTok is the platform where users spend the most time – averaging over 23 hours per month. At Trend Fluence, we help you leverage that time for your brand’s benefit through TikTok influencer marketing. Our agency ensures that your brand gets the spotlight it deserves on one of the world’s most engaging and widely used social media platforms!",
                         bgColor: "rgba(0, 237, 231, 1)",
-                        textColor: "black"
+                        textColor: "black",
+                        overflow: "scroll"
                     },
                     {
                         title: `Trend Fluence influencer marketing agency understands the secret to dominating the market through TikTok.  PERFECT FOR COMPANIES OF ALL SIZES
@@ -230,13 +231,15 @@ const Platforms = () => {
                         title: "PRECISE INFLUENCER SELECTION",
                         content: " To make your TikTok influencer campaign as impactful as possible, we identify influencers with engaged and loyal audiences who are already curious about what your brand has to offer. TikTok influencer marketing is about creating the right connections with people who can help you reach your specific audience—whether you're looking for niche micro-influencers or high-profile mega-influencers.",
                         bgColor: "white",
-                        textColor: "black"
+                        textColor: "black",
+                        overflow: "scroll"
                     },
                     {
                         title: "RESULTS-DRIVEN APPROACH",
                         content: "When partnering with our TikTok influencer marketing agency, you gain access to a dedicated team of professionals who are experts in influencer marketing and have valuable connections with TikTok creators. We act as your in-house department, ensuring all aspects of your campaign are covered. With our comprehensive approach, we deliver maximum performance and results from your TikTok influencer campaigns.",
                         bgColor: "white",
-                        textColor: "black"
+                        textColor: "black",
+                        overflow: "scroll"
                     }
                 ].map((feature, index) => (
                     <motion.div
