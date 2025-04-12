@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import { motion } from 'framer-motion';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Background1 from "../assets/portfoilo/background1.png";
-import Background2 from "../assets/portfoilo/background2.png";
-import Background3 from "../assets/portfoilo/background3.png";
-import Background4 from "../assets/portfoilo/background4.png";
-import Background5 from "../assets/portfoilo/background5.png";
+import Background1 from "../assets/portfoilo/background1.mp4"; // Assuming these are now video files
+import Background2 from "../assets/portfoilo/background2.mp4";
+import Background3 from "../assets/portfoilo/background3.mp4";
+import Background4 from "../assets/portfoilo/background4.mp4";
+import Background5 from "../assets/portfoilo/background5.mp4";
 import './Portfolio.css'; // Create this CSS file for custom styles
 
 const Portfolio = () => {
@@ -18,7 +18,7 @@ const Portfolio = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 5000,
         responsive: [
             {
                 breakpoint: 1024,
@@ -83,27 +83,27 @@ const Portfolio = () => {
             >
                 <Slider {...settings}>
                     <PortfolioSlide
-                        image={Background1}
+                        video={Background1}
                         title="Hublot Watch"
                         subtitle="play a video"
                     />
                     <PortfolioSlide
-                        image={Background2}
+                        video={Background2}
                         title="Cool App Design"
                         subtitle="Mobile Application"
                     />
                     <PortfolioSlide
-                        image={Background3}
+                        video={Background3}
                         title="Pizza Company"
                         subtitle="play a Video"
                     />
                     <PortfolioSlide
-                        image={Background4}
+                        video={Background4}
                         title="Chanel Promotion"
                         subtitle="play a Video"
                     />
                     <PortfolioSlide
-                        image={Background5}
+                        video={Background5}
                         title="Logistics Promo"
                         subtitle="play a Video"
                     />
@@ -113,22 +113,29 @@ const Portfolio = () => {
     );
 };
 
-// Slide component with animations
-const PortfolioSlide = ({ image, title, subtitle }) => {
+// Slide component with video
+const PortfolioSlide = ({ video, title, subtitle }) => {
+
     return (
         <motion.div
             className="portfolio-slide"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
         >
-            <div className="slide-image-container">
-                <motion.img
-                    src={image}
+            <div className="slide-video-container">
+                <motion.video
+                    height="100%"
+                    width="100%"
+                    src={video}
                     alt={title}
-                    className="slide-image"
+                    className="slide-video"
                     initial={{ scale: 1.1 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.5 }}
+                    loop
+                    muted
+                    autoPlay
+                    style={{ borderRadius: "20px" }}
                 />
                 <motion.div
                     className="slide-overlay"
@@ -139,30 +146,9 @@ const PortfolioSlide = ({ image, title, subtitle }) => {
                     <p className="slide-title">{title}</p>
                     <p className="slide-subtitle">{subtitle}</p>
                 </motion.div>
-                <motion.div
-                    className="slide-play-button"
-                    whileHover={{
-                        scale: 1.2,
-                        backgroundColor: 'rgba(0, 237, 231, 0.9)'
-                    }}
-                    whileTap={{ scale: 0.9 }}
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        fill="currentColor"
-                        className="bi bi-play-fill"
-                        viewBox="0 0 16 16"
-                    >
-                        <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-.946 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
-                    </svg>
-                </motion.div>
             </div>
         </motion.div>
     );
 };
 
 export default Portfolio;
-
-
