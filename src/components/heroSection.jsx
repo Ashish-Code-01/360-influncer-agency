@@ -10,7 +10,7 @@ import Pocket from "../assets/hero/pocket.png";
 
 import UserAvatar from "../assets/users.png";
 import Button from "../assets/Button.png";
-import background from "../assets/backgroung.jpeg";
+import UserVideo from "../assets/hero/video.webm";
 
 const HeroSection = () => {
     const imageVariants = {
@@ -145,70 +145,18 @@ const HeroSection = () => {
                         </div>
                     </div>
                 </div>
-
-                {/* Button */}
-                <motion.div
-                    style={{
-                        position: "absolute",
-                        right: "20px",
-                        bottom: "40px",
-                        zIndex: 1,
-                        "@media (min-width: 768px)": {
-                            right: "40px",
-                            bottom: "80px"
-                        },
-                        "@media (min-width: 1024px)": {
-                            right: "100px",
-                            bottom: "120px"
-                        }
-                    }}
-                    variants={buttonVariants}
-                    initial="initial"
-                    animate="animate"
-                >
-                    <img
-                        src={Button}
-                        alt="Button"
-                        style={{
-                            width: "80px",
-                            cursor: "pointer",
-                            "@media (min-width: 768px)": {
-                                width: "100px"
-                            }
-                        }}
-                    />
-                </motion.div>
-
                 {/* Background Image */}
-                <motion.div
-                    style={{
-                        marginTop: "40px",
-                        position: "relative",
-                        width: "100%",
-                        paddingTop: "56.25%", // 16:9 aspect ratio
-                        overflow: "hidden",
-                        borderRadius: "20px",
-                        "@media (min-width: 768px)": {
-                            marginTop: "60px"
-                        }
-                    }}
-                    variants={backgroundVariants}
+                <motion.video
+                    style={{ width: "100%", height: "90vh" }} 
+                    variants={imageVariants}
                     initial="initial"
                     animate="animate"
+                    loop
+                    muted // Recommended for autoplay in most browsers
+                    autoPlay // Optional: to autoplay the video
                 >
-                    <img
-                        src={background}
-                        alt="Background"
-                        style={{
-                            position: "absolute",
-                            top: 0,
-                            left: 0,
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover"
-                        }}
-                    />
-                </motion.div>
+                    <source src={UserVideo} type="video/mp4" />
+                </motion.video>
             </div>
 
             {/* Clients Section */}
@@ -234,7 +182,7 @@ const HeroSection = () => {
                 <motion.div
                     style={{
                         display: "flex",
-                        flexWrap: "nowrap", 
+                        flexWrap: "nowrap",
                         width: "100%",
                     }}
                     variants={clientSliderVariants}
