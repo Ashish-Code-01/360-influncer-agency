@@ -80,7 +80,8 @@ function App() {
                             fontWeight: "400",
                             font: "Inter",
                             marginBottom: "20px",
-                            fontSize: "0.9rem",
+                            fontSize: "17px"
+
                         }}>
                             We are in the thick of the digital age, and video has become one of the most
                             powerful storytelling and brand communication tools. But did you know that
@@ -92,7 +93,7 @@ function App() {
                             fontWeight: "400",
                             font: "Inter",
                             marginBottom: "20px",
-                            fontSize: "0.9rem",
+                            fontSize: "17px"
                         }}>
                             At Kaleidoscope Studio, we're at the forefront of this art. We bring individuals'
                             and organizations' visions to life through high-quality, professional video
@@ -121,7 +122,7 @@ function App() {
                 <main style={{
                     marginTop: "40px",
                     width: "100%",
-                    maxWidth: "900px",
+                    maxWidth: "1250px",
                     display: "flex",
                     flexDirection: window.innerWidth <= 700 ? 'column' : 'row',
                     gap: "20px",
@@ -145,7 +146,7 @@ function App() {
                         transition={{ duration: 0.5 }}
                     >
                         <h2 style={{ lineHeight: "1.3", color: "black", fontWeight: "900", fontSize: "1.2rem" }}>Make Your Product Stand Out <br />With A Custom Video</h2>
-                        <p style={{ color: "black", fontSize: "0.85rem" }} >Make your Product launch stand out <br />from the rest.</p>
+                        <p style={{ color: "black", fontSize: "17px" }} >Make your Product launch stand out <br />from the rest.</p>
                     </motion.div>
                     <motion.div
                         variants={featureBoxVariants}
@@ -165,8 +166,8 @@ function App() {
                         whileHover={{ scale: 1.3 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <h2 style={{ lineHeight: "1.3", color: "black", fontSize: "1.2rem" }}>Super-fast delivery <br />(Unlike most agencies)</h2>
-                        <p style={{ color: "black", fontSize: "0.85rem" }} >No more slow agencies or freelancers. <br /> We send your video within 7 to 10 days.</p>
+                        <h2 style={{ lineHeight: "1.3", color: "black", fontWeight: "900", fontSize: "1.2rem" }}>Super-fast delivery <br />(Unlike most agencies)</h2>
+                        <p style={{ color: "black", fontSize: "17px" }} >No more slow agencies or freelancers. <br /> We send your video within 7 to 10 days.</p>
                     </motion.div>
                     <motion.div
                         variants={featureBoxVariants}
@@ -186,8 +187,8 @@ function App() {
                         whileHover={{ scale: 1.3 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <h2 style={{ lineHeight: "1.3", color: "black", fontSize: "1.2rem" }}>Turn visitors into customers. <br /> Boost your conversion rate.</h2>
-                        <p style={{ color: "black", fontSize: "0.85rem" }} >Showcase features of your SaaS to potential <br />users within seconds.</p>
+                        <h2 style={{ lineHeight: "1.3", color: "black", fontWeight: "900", fontSize: "1.2rem" }}>Turn visitors into customers. <br /> Boost your conversion rate.</h2>
+                        <p style={{ color: "black", fontSize: "17px" }} >Showcase features of your SaaS to potential <br />users within seconds.</p>
                     </motion.div>
                     <motion.div
                         variants={featureBoxVariants}
@@ -208,8 +209,8 @@ function App() {
                         transition={{ duration: 0.5 }}
 
                     >
-                        <h2 style={{ lineHeight: "1.3", color: "black", fontSize: "1.2rem" }}>Script. Voiceover. Animation. <br />Start to finish.</h2>
-                        <p style={{ color: "black", fontSize: "0.85rem" }} >We handle everything: researching, writing the <br /> script, voiceover & animation.</p>
+                        <h2 style={{ lineHeight: "1.3", color: "black", fontWeight: "900", fontSize: "1.2rem" }}>Script. Voiceover. Animation. <br />Start to finish.</h2>
+                        <p style={{ color: "black", fontSize: "17px" }} >We handle everything: researching, writing the <br /> script, voiceover & animation.</p>
                     </motion.div>
                 </main >
             </motion.div >

@@ -8,7 +8,6 @@ const platforms = () => {
     return (
         <div>
             <Navbar />
-            <About />
             <Industries />
             <Footer />
         </div>

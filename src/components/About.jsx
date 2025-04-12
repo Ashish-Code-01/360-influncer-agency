@@ -10,7 +10,6 @@ import men from "../assets/about/men.jpeg";
 import boy from "../assets/about/boy.jpeg";
 import boxing from "../assets/about/boxing.jpeg";
 import music from "../assets/about/music.jpeg";
-import { width } from '@fortawesome/free-brands-svg-icons/fa42Group';
 
 const About = () => {
     const imageVariants = (index) => {
@@ -31,18 +30,12 @@ const About = () => {
             <div style={headerSection}>
                 <p style={aboutUsText}>About Us</p>
             </div>
-            <h1 style={industriesTitle}> <span style={industriesHighlight}>INDUSTRIES</span> WE WORK IN</h1>
-            <div style={descriptionSection}>
-                <p style={descriptionText}>
-                    For those who wish to conquer new markets and dominate their industries, the Famesters influencer marketing <br />agency provides scaling opportunities: fast, wise, efficient. Each team at Famesters is independent yet synergetic,<br /> dedicated to a specific business niche.
-                </p>
-            </div>
             <div style={imageRow}>
                 <motion.img src={spiderman} alt="" style={imageStyle} variants={imageVariants(0)} initial="initial" animate="animate" transition={transition} whileHover={{ scale: 1.02 }} />
                 <motion.img src={Mobile} alt="" style={imageStyle} variants={imageVariants(1)} initial="initial" animate="animate" transition={transition} whileHover={{ scale: 1.02 }} />
                 <div style={philosophySection}>
                     <h3 style={philosophyTitle}> Our philosophy</h3>
-                    <p style={philosophyText}>The Famesters influencer marketing agency exists to bring actual results for businesses and do the work fast, effectively, and smartly. We are a team of professionals, passionate about influencer marketing campaigns that actually have a meaning and a real impact. We nurture genuine connections and strengthen the bonds between brands and influencers, and ultimately – brands and their target audiences.</p>
+                    <p style={philosophyText}>The Famesters Influencer Marketing agency exists to bring actual results for businesses and do the work fast, effectively, and smartly. We are a team of professionals, passionate about Influencer Marketing campaigns that actually have a meaning and a real impact. We nurture genuine connections and strengthen the bonds between brands and influencers, and ultimately – brands and their target audiences.</p>
                 </div>
             </div>
             <div style={imageRow}>
@@ -160,6 +153,7 @@ const philosophyText = {
     width: "100%",
     textAlign: "center",
     maxWidth: "550px",
+    fontSize: "17px"
 };
 
 const lastRow = {
@@ -184,6 +178,7 @@ const lastParagraphText = {
     letterSpacing: "0.3px",
     lineHeight: "24px",
     width: "100%",
+    fontSize: "17px"
 };
 
 export default About;

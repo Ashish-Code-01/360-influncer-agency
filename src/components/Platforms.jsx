@@ -40,14 +40,14 @@ const Platforms = () => {
             }}>
                 {[
                     {
-                        title: "Leverage Instagram influencer marketing to increase your ROI and drive sales.  ",
-                        content: "The Trend Fluence, we’re here to handle the research, connect you with the right Instagram influencers at the best rates, and oversee your next impactful influencer marketing campaign.",
+                        title: "Leverage Instagram Influencer Marketing to increase your ROI and drive sales.  ",
+                        content: "The Trend Fluence, we’re here to handle the research, connect you with the right Instagram influencers at the best rates, and oversee your next impactful Influencer Marketing campaign.",
                         bgColor: "rgba(0, 237, 231, 1)",
                         textColor: "black"
                     },
                     {
                         title: `Why partner with Trend Fluence for your Instagram Influencer Marketing?  TAILORED STRATEGY FOR EVERY BRAND `,
-                        content: " No matter the industry, Instagram influencer marketing can work wonders for your business. Trend Fluence specializes in crafting personalized strategies that perfectly showcase your brand, product, or service, maximizing your returns from influencer collaborations.",
+                        content: " No matter the industry, Instagram Influencer Marketing can work wonders for your business. Trend Fluence specializes in crafting personalized strategies that perfectly showcase your brand, product, or service, maximizing your returns from influencer collaborations.",
                         bgColor: "white",
                         textColor: "black",
                         overflow: "scroll"
@@ -60,7 +60,7 @@ const Platforms = () => {
                     },
                     {
                         title: "INSIGHT-LED STRATEGY",
-                        content: "Instagram influencer marketing knows no limits, and neither do we. Whether you're venturing into new markets or looking to dominate a familiar one, our experts, fluent in 15 languages, have the cultural expertise to ensure success in any region",
+                        content: "Instagram Influencer Marketing knows no limits, and neither do we. Whether you're venturing into new markets or looking to dominate a familiar one, our experts, fluent in 15 languages, have the cultural expertise to ensure success in any region",
                         bgColor: "white",
                         textColor: "black"
                     }
@@ -133,7 +133,7 @@ const Platforms = () => {
                     },
                     {
                         title: `Reasons Why Brands Opt for Trend Fluence in YouTube Influencer Marketing  IDEAL FOR  ANY INDUSTRY `,
-                        content: "We collaborate with brands across various sectors, including gaming, fintech, mobile, digital services, e-commerce, and more. Whether you're a startup, growing business, or established enterprise, our tailored approach ensures you get the most out of influencer marketing.",
+                        content: "We collaborate with brands across various sectors, including gaming, fintech, mobile, digital services, e-commerce, and more. Whether you're a startup, growing business, or established enterprise, our tailored approach ensures you get the most out of Influencer Marketing.",
                         bgColor: "white",
                         textColor: "black",
                         overflow: "scroll"
@@ -214,29 +214,29 @@ const Platforms = () => {
                 {[
                     {
                         title: "TikTok Influencer Marketing: We turn your brand into a sensation ",
-                        content: "Here’s why your brand needs a TikTok influencer marketing agency. TikTok is the platform where users spend the most time – averaging over 23 hours per month. At Trend Fluence, we help you leverage that time for your brand’s benefit through TikTok influencer marketing. Our agency ensures that your brand gets the spotlight it deserves on one of the world’s most engaging and widely used social media platforms!",
+                        content: "Here’s why your brand needs a TikTok Influencer Marketing agency. TikTok is the platform where users spend the most time – averaging over 23 hours per month. At Trend Fluence, we help you leverage that time for your brand’s benefit through TikTok Influencer Marketing. Our agency ensures that your brand gets the spotlight it deserves on one of the world’s most engaging and widely used social media platforms!",
                         bgColor: "rgba(0, 237, 231, 1)",
                         textColor: "black",
                         overflow: "scroll"
                     },
                     {
-                        title: `Trend Fluence influencer marketing agency understands the secret to dominating the market through TikTok.  PERFECT FOR COMPANIES OF ALL SIZES
+                        title: `Trend Fluence Influencer Marketing agency understands the secret to dominating the market through TikTok.  PERFECT FOR COMPANIES OF ALL SIZES
 `,
-                        content: " We blend our expertise with current trends to help businesses of any scale achieve significant visibility on TikTok. By crafting innovative strategies alongside influencers, we ensure your campaign stands out. Together, we and our clients set trends and win the hearts of audiences across the globe with TikTok influencer marketing.",
+                        content: " We blend our expertise with current trends to help businesses of any scale achieve significant visibility on TikTok. By crafting innovative strategies alongside influencers, we ensure your campaign stands out. Together, we and our clients set trends and win the hearts of audiences across the globe with TikTok Influencer Marketing.",
                         bgColor: "white",
                         textColor: "black",
                         overflow: "scroll"
                     },
                     {
                         title: "PRECISE INFLUENCER SELECTION",
-                        content: " To make your TikTok influencer campaign as impactful as possible, we identify influencers with engaged and loyal audiences who are already curious about what your brand has to offer. TikTok influencer marketing is about creating the right connections with people who can help you reach your specific audience—whether you're looking for niche micro-influencers or high-profile mega-influencers.",
+                        content: " To make your TikTok influencer campaign as impactful as possible, we identify influencers with engaged and loyal audiences who are already curious about what your brand has to offer. TikTok Influencer Marketing is about creating the right connections with people who can help you reach your specific audience—whether you're looking for niche micro-influencers or high-profile mega-influencers.",
                         bgColor: "white",
                         textColor: "black",
                         overflow: "scroll"
                     },
                     {
                         title: "RESULTS-DRIVEN APPROACH",
-                        content: "When partnering with our TikTok influencer marketing agency, you gain access to a dedicated team of professionals who are experts in influencer marketing and have valuable connections with TikTok creators. We act as your in-house department, ensuring all aspects of your campaign are covered. With our comprehensive approach, we deliver maximum performance and results from your TikTok influencer campaigns.",
+                        content: "When partnering with our TikTok Influencer Marketing agency, you gain access to a dedicated team of professionals who are experts in Influencer Marketing and have valuable connections with TikTok creators. We act as your in-house department, ensuring all aspects of your campaign are covered. With our comprehensive approach, we deliver maximum performance and results from your TikTok influencer campaigns.",
                         bgColor: "white",
                         textColor: "black",
                         overflow: "scroll"

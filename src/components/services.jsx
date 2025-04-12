@@ -210,8 +210,8 @@ const Services = () => {
                 style={{
                     borderRadius: "20px",
                     margin: "60px 0",
-                    width: '90%',
-                    maxWidth: '1000px',
+                    width: '99%',
+                    maxWidth: '1250px',
                     height: 'auto'
                 }}
                 alt="Services"
@@ -236,7 +236,7 @@ const Services = () => {
                 }}>
                     <span style={{ color: '#00FFFF' }}>Get real & measurable</span> business results
                     <br />
-                    with turnkey influencer marketing <br />
+                    with turnkey Influencer Marketing <br />
                     {!isMobile && <center>solutions</center>}
                 </h1>
                 <p style={{
@@ -310,7 +310,7 @@ const Services = () => {
                 }}>
                     <span style={{ color: '#00FFFF' }}>WHY</span> BRANDS CHOOSE TREND 360 °
                     <br />
-                    INFLUENCER MARKETING AGENCY
+                    Influencer Marketing AGENCY
                 </h2>
                 <p style={{
                     color: '#00FFFF',
@@ -348,8 +348,8 @@ const Services = () => {
                     },
                     {
                         logo: logo2,
-                        title: "Creative influencer marketing strategy",
-                        content: "We don't rely on feelings only when building a strategy that will make your brand stand out in the market. Our experts combine creativity and data-driven approach to every campaign to get measurable results – and make your target audience feel what you need them to. The Famesters influencer marketing agency doesn't just follow trends; we set them. Our creative geniuses work hand-in-hand with influencers to develop content that captivates, engages, and converts, ensuring your brand not only stands out but shines in the digital cosmos.",
+                        title: "Creative Influencer Marketing strategy",
+                        content: "We don't rely on feelings only when building a strategy that will make your brand stand out in the market. Our experts combine creativity and data-driven approach to every campaign to get measurable results – and make your target audience feel what you need them to. The Famesters Influencer Marketing agency doesn't just follow trends; we set them. Our creative geniuses work hand-in-hand with influencers to develop content that captivates, engages, and converts, ensuring your brand not only stands out but shines in the digital cosmos.",
                         bgColor: "white",
                         textColor: "black"
                     }
@@ -424,7 +424,7 @@ const Services = () => {
                         {
                             logo: logo3,
                             title: "Media planning",
-                            content: "The Famesters influencer marketing agency dedicated team devises comprehensive, multi-platform media strategies that ensure your message is seen by the right people, at the right time, in the right places. From initial concept to final execution, our meticulous planning maximizes reach and engagement, driving results that exceed expectations.",
+                            content: "The Famesters Influencer Marketing agency dedicated team devises comprehensive, multi-platform media strategies that ensure your message is seen by the right people, at the right time, in the right places. From initial concept to final execution, our meticulous planning maximizes reach and engagement, driving results that exceed expectations.",
                             bgColor: "white",
                             textColor: "black"
                         },
@@ -440,13 +440,13 @@ const Services = () => {
                         {
                             logo: logo5,
                             title: "Influencer fraud protection",
-                            content: "Your trust and security are our top priority. The Famesters influencer marketing agency implements robust fraud protection measures to safeguard your investments and ensure the authenticity of your influencer partnerships. Our advanced technology and vigilant manual monitoring detect and neutralize fraudulent influencer activity, ensuring that every view, like, and share represents a genuine engagement with your brand.",
+                            content: "Your trust and security are our top priority. The Famesters Influencer Marketing agency implements robust fraud protection measures to safeguard your investments and ensure the authenticity of your influencer partnerships. Our advanced technology and vigilant manual monitoring detect and neutralize fraudulent influencer activity, ensuring that every view, like, and share represents a genuine engagement with your brand.",
                             bgColor: "white",
                             textColor: "black"
                         },
                         {
                             logo: logo6,
-                            title: "Influencer marketing measurements & reports",
+                            title: "Influencer Marketing measurements & reports",
                             content: "Data drives our decision-making. The Famesters influencer agency provides comprehensive measurements and in-depth reports that offer clear, actionable insights into your influencer campaign's performance. Our analytics go beyond surface-level metrics, delving into audience behavior, engagement trends, and ROI, empowering you to make informed decisions and continuously optimize your strategy.",
                             bgColor: "white",
                             textColor: "black"
@@ -456,14 +456,14 @@ const Services = () => {
                         {
                             logo: logo7,
                             title: "Legal & compliance services",
-                            content: "You need confidence to succeed in influencer marketing. The Famesters influencer agency offers extensive legal and compliance services, ensuring your campaigns adhere to the latest regulations and industry standards. From influencer contracts to intellectual property rights and dispute resolutions, our expert team provides the guidance and support you need to protect your brand and operate with integrity.",
+                            content: "You need confidence to succeed in Influencer Marketing. The Famesters influencer agency offers extensive legal and compliance services, ensuring your campaigns adhere to the latest regulations and industry standards. From influencer contracts to intellectual property rights and dispute resolutions, our expert team provides the guidance and support you need to protect your brand and operate with integrity.",
                             bgColor: "white",
                             textColor: "black"
                         },
                         {
                             logo: logo8,
                             title: "Payment & transaction services",
-                            content: "Our influencer marketing agency streamlines your operations. Our comprehensive solutions simplify the financial aspects of influencer partnerships, from seamless payments to transparent transactions. You don't need to worry about payment methods: just choose the ones that are convenient for you, and we will pay your chosen influencers the way they like it – the job is on us, we find the best ways.",
+                            content: "Our Influencer Marketing agency streamlines your operations. Our comprehensive solutions simplify the financial aspects of influencer partnerships, from seamless payments to transparent transactions. You don't need to worry about payment methods: just choose the ones that are convenient for you, and we will pay your chosen influencers the way they like it – the job is on us, we find the best ways.",
                             bgColor: "white",
                             textColor: "black"
                         }
@@ -536,7 +536,7 @@ const Services = () => {
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: 'easeInOut', delay: 1 }}
+                transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.3 }}
                 style={{
                     margin: isMobile ? "50px 0" : "100px 0",
                     width: isMobile ? "95%" : "90%",

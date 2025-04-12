@@ -1,6 +1,6 @@
 # 360° Influencer Agency
 
-A modern React-based website for a full-service influencer marketing agency. This platform showcases our comprehensive services, case studies, and successful collaborations in the influencer marketing space.
+A modern React-based website for a full-service Influencer Marketing agency. This platform showcases our comprehensive services, case studies, and successful collaborations in the Influencer Marketing space.
 
 ## Features
 
@@ -52,4 +52,4 @@ npm run build
 
 ## Contact
 
-For inquiries about our influencer marketing services, please visit our contact page.
+For inquiries about our Influencer Marketing services, please visit our contact page.

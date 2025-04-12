@@ -132,7 +132,7 @@ const styles = {
         padding: '20px',
         borderRadius: '8px',
         textAlign: 'center',
-        minHeight: '300px',
+        minHeight: '350px',
         width: "250px"
     },
     quote: {
@@ -141,7 +141,7 @@ const styles = {
         marginBottom: '10px',
     },
     text: {
-        fontSize: '1em',
+        fontSize: "17px",
         lineHeight: '1.6',
         marginBottom: '15px',
     },
