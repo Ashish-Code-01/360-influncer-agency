@@ -183,7 +183,6 @@ const lastParagraphSection = {
 
 const lastParagraphText = {
     fontFamily: "Inter, sans-serif",
-    fontSize: "16px",
     letterSpacing: "0.3px",
     lineHeight: "24px",
     width: "100%",
