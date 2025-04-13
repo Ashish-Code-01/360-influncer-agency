@@ -209,8 +209,7 @@ const leftSectionStyle = {
 const logoStyle = {
     display: 'flex',
     alignItems: 'center',
-    marginBottom: '20px',
-    justifyContent: 'center',
+    marginBottom: '10px',
 };
 
 const logoTextStyle = {

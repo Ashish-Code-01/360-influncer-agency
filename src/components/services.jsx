@@ -414,7 +414,7 @@ const Services = () => {
                 transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.8 }}
                 style={{
                     marginTop: isMobile ? "20px" : "30px",
-                    width: isMobile ? "95%" : "100%",
+                    width: isMobile ? "95%" : "90%",
                     maxWidth: '1200px',
                     padding: isMobile ? "10px" : "20px"
                 }}
