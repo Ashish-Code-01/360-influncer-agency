@@ -9,7 +9,6 @@ import PinUp from "../assets/hero/pinup.png";
 import Pocket from "../assets/hero/pocket.png";
 
 import UserAvatar from "../assets/users.png";
-import Button from "../assets/Button.png";
 import UserVideo from "../assets/hero/video.webm";
 
 const HeroSection = () => {

@@ -32,11 +32,12 @@ const About = () => {
             </div>
             <div style={imageRow}>
                 <motion.img src={spiderman} alt="" style={imageStyle} variants={imageVariants(0)} initial="initial" animate="animate" transition={transition} whileHover={{ scale: 1.02 }} />
-                <motion.img src={Mobile} alt="" style={imageStyle} variants={imageVariants(1)} initial="initial" animate="animate" transition={transition} whileHover={{ scale: 1.02 }} />
                 <div style={philosophySection}>
                     <h3 style={philosophyTitle}> Our philosophy</h3>
                     <p style={philosophyText}>The Famesters Influencer Marketing agency exists to bring actual results for businesses and do the work fast, effectively, and smartly. We are a team of professionals, passionate about Influencer Marketing campaigns that actually have a meaning and a real impact. We nurture genuine connections and strengthen the bonds between brands and influencers, and ultimately – brands and their target audiences.</p>
                 </div>
+                <motion.img src={Mobile} alt="" style={imageStyle} variants={imageVariants(1)} initial="initial" animate="animate" transition={transition} whileHover={{ scale: 1.02 }} />
+
             </div>
             <div style={imageRow}>
                 <motion.img src={Food} alt="" style={imageStyle} variants={imageVariants(2)} initial="initial" animate="animate" transition={transition} whileHover={{ scale: 1.02 }} />
@@ -138,6 +139,11 @@ const philosophySection = {
     flex: "1 1 350px",
     maxWidth: "500px",
     margin: "0 0",
+    textAlign: "center",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
 };
 
 const philosophyTitle = {
@@ -169,7 +175,10 @@ const lastParagraphSection = {
     flex: "1 1 350px",
     maxWidth: "500px",
     margin: "0 0",
-    textAlign: "center",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
 };
 
 const lastParagraphText = {

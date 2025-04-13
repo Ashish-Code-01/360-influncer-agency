@@ -82,7 +82,9 @@ function Navbar() {
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
-                Book A Demo
+                <a href="/contactus" style={linkStyle}>
+                    Book a Demo
+                </a>
             </motion.button>
         </nav>
     );
@@ -131,7 +133,7 @@ const linkStyle = {
     textDecoration: 'none',
     color: 'white',
     fontSize: '1em',
-    marginLeft: '20px', // Reduced left margin for better spacing on smaller screens
+    marginLeft: '20px',
 };
 
 const buttonStyle = {
