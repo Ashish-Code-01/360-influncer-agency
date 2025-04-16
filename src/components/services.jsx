@@ -118,8 +118,9 @@ const Services = () => {
             >
                 {[
                     { left: "Influencer search", right: "Media planning" },
-                    { left: "Legal & compliance services", right: "Content distribution strategy" },
-                    { left: "Influencer fraud protection", right: "Payment & transaction services" }
+                    { left: "Influencer marketing measurements & reports", right: "Content distribution strategy" },
+                    { left: "Influencer fraud protection", right: "Payment & transaction services" },
+                    { left: "Legal & compliance services", right: "Creative influencer marketing strategy" }
                 ].map((service, index) => (
                     <React.Fragment key={index}>
                         <div style={{
@@ -342,14 +343,14 @@ const Services = () => {
                     {
                         logo: logo1,
                         title: "Influencer search",
-                        content: "At the heart of every impactful campaign is the perfect influencer match, and for every business there is a perfect influencer. We analyze over 50 metrics to find the best influencers who fit your business goals. The Famesters influencer agency leverages AI alongside human insight to connect your brand with influencers who embody your values and speak directly to your audience. Our rigorous selection process and deep industry connections mean we find not just any influencer, but the right influencer to get your brand known, loved, and paid for.",
+                        content: "Influencer selection is key to the success of any campaign, and we ensure your brand connects with the right voices. By analyzing over 50 key metrics, we identify influencers who align perfectly with your business objectives. Trend Fluence, we combine AI technology with expert human insight to match your brand with influencers who truly resonate with your audience. Our thorough vetting process and strong industry relationships ensure we find the ideal influencers to elevate your brand’s visibility and drive real results.",
                         bgColor: "rgba(0, 237, 231, 1)",
                         textColor: "black"
                     },
                     {
                         logo: logo2,
                         title: "Creative Influencer Marketing strategy",
-                        content: "We don't rely on feelings only when building a strategy that will make your brand stand out in the market. Our experts combine creativity and data-driven approach to every campaign to get measurable results – and make your target audience feel what you need them to. The Famesters Influencer Marketing agency doesn't just follow trends; we set them. Our creative geniuses work hand-in-hand with influencers to develop content that captivates, engages, and converts, ensuring your brand not only stands out but shines in the digital cosmos.",
+                        content: "Our strategy is built on a perfect blend of creativity and data-driven insights, ensuring your brand makes a lasting impression. Trend Fluence, we don’t just follow trends; we create them. Our team works closely with influencers to craft compelling content that resonates with your audience, drives engagement, and delivers measurable results—making your brand not just visible, but unforgettable in the digital landscape.",
                         bgColor: "white",
                         textColor: "black"
                     }
@@ -366,6 +367,7 @@ const Services = () => {
                         position: 'relative',
                         color: feature.textColor,
                         transition: 'transform 0.3s ease',
+                        height:"400px",
                         ':hover': { transform: 'translateY(-10px)' }
                     }}>
                         <img src={feature.logo} alt="logo" style={{ height: '50px', width: '50px' }} />
@@ -424,14 +426,14 @@ const Services = () => {
                         {
                             logo: logo3,
                             title: "Media planning",
-                            content: "The Famesters Influencer Marketing agency dedicated team devises comprehensive, multi-platform media strategies that ensure your message is seen by the right people, at the right time, in the right places. From initial concept to final execution, our meticulous planning maximizes reach and engagement, driving results that exceed expectations.",
+                            content: "Trend Fluence, our expert team creates tailored, multi-platform media strategies that guarantee your message reaches the right audience at the perfect moment. From concept to execution, our detailed planning optimizes reach and engagement, ensuring your campaign delivers exceptional results that go beyond expectations.",
                             bgColor: "white",
                             textColor: "black"
                         },
                         {
                             logo: logo4,
                             title: "Content distribution strategy",
-                            content: "The goal here is to ensure your influencer ads not only reach but resonate with your target audience across multiple channels. This is what the Famesters influencer agency crafts distribution strategies for. Our approach means your campaigns benefit from optimal visibility, engagement, and impact, amplifying your brand voice across relevant platforms.",
+                            content: "Trend Fluence, we design content distribution strategies that ensure your influencer campaigns not only reach but truly connect with your target audience across various platforms. Our approach maximizes visibility, engagement, and impact, amplifying your brand's voice where it matters most.",
                             bgColor: "white",
                             textColor: "black"
                         }
@@ -440,14 +442,14 @@ const Services = () => {
                         {
                             logo: logo5,
                             title: "Influencer fraud protection",
-                            content: "Your trust and security are our top priority. The Famesters Influencer Marketing agency implements robust fraud protection measures to safeguard your investments and ensure the authenticity of your influencer partnerships. Our advanced technology and vigilant manual monitoring detect and neutralize fraudulent influencer activity, ensuring that every view, like, and share represents a genuine engagement with your brand.",
+                            content: "Trend Fluence, we prioritize your trust and security by implementing strong fraud protection protocols. Our advanced technology, combined with careful manual oversight, ensures the authenticity of every influencer partnership. We actively monitor and detect fraudulent activities, guaranteeing that every interaction—whether it's a view, like, or share—is a genuine engagement with your brand.",
                             bgColor: "white",
                             textColor: "black"
                         },
                         {
                             logo: logo6,
                             title: "Influencer Marketing measurements & reports",
-                            content: "Data drives our decision-making. The Famesters influencer agency provides comprehensive measurements and in-depth reports that offer clear, actionable insights into your influencer campaign's performance. Our analytics go beyond surface-level metrics, delving into audience behavior, engagement trends, and ROI, empowering you to make informed decisions and continuously optimize your strategy.",
+                            content: "Trend Fluence, data is at the core of everything we do. We provide detailed measurements and in-depth reports that deliver clear, actionable insights into the performance of your influencer campaigns. Our analytics go beyond basic metrics, examining audience behavior, engagement patterns, and ROI, giving you the tools to make informed decisions and refine your strategy for ongoing success.",
                             bgColor: "white",
                             textColor: "black"
                         }
@@ -456,14 +458,14 @@ const Services = () => {
                         {
                             logo: logo7,
                             title: "Legal & compliance services",
-                            content: "You need confidence to succeed in Influencer Marketing. The Famesters influencer agency offers extensive legal and compliance services, ensuring your campaigns adhere to the latest regulations and industry standards. From influencer contracts to intellectual property rights and dispute resolutions, our expert team provides the guidance and support you need to protect your brand and operate with integrity.",
+                            content: "Confidence in compliance is key to successful influencer marketing. Trend Fluence, we provide comprehensive legal and compliance services to ensure your campaigns meet all current regulations and industry standards. Our expert team handles everything from influencer contracts to intellectual property protection and dispute resolution, offering the support you need to safeguard your brand and maintain ethical practices.",
                             bgColor: "white",
                             textColor: "black"
                         },
                         {
                             logo: logo8,
                             title: "Payment & transaction services",
-                            content: "Our Influencer Marketing agency streamlines your operations. Our comprehensive solutions simplify the financial aspects of influencer partnerships, from seamless payments to transparent transactions. You don't need to worry about payment methods: just choose the ones that are convenient for you, and we will pay your chosen influencers the way they like it – the job is on us, we find the best ways.",
+                            content: "Trend Fluence we simplify the financial side of influencer partnerships with our streamlined payment and transaction services. From secure, hassle-free payments to transparent financial processes, we ensure everything runs smoothly. You choose the payment methods that work for you, and we take care of the rest, ensuring your influencers are paid quickly and efficiently, just the way they prefer.",
                             bgColor: "white",
                             textColor: "black"
                         }

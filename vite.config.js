@@ -6,6 +6,7 @@ export default defineConfig({
   base: '/',
   assetsInclude: ['**/*.PNG', '**/*.JPG'],
   build: {
+    outDir: 'dist',
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {

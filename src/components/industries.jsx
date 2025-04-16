@@ -41,7 +41,8 @@ const industries = () => {
                 <h1 style={industriesTitle}> <span style={industriesHighlight}>INDUSTRIES</span> WE WORK IN</h1>
                 <div style={descriptionSection}>
                     <p style={descriptionText}>
-                        For those who wish to conquer new markets and dominate their industries, the Famesters Influencer Marketing <br />agency provides scaling opportunities: fast, wise, efficient. Each team at Famesters is independent yet synergetic,<br /> dedicated to a specific business niche.
+                        Trend Fluence, WE SPECIALIZE IN TAILORED INFLUENCER STRATEGIES FOR A  VARIETY OF INDUSTRIES, HELPING BRANDS EXPAND THEIR REACH AND MAKE A LASTING IMPACT. OUR EXPERT TEAMS WORK HAND-IN-HAND TO ELEVATE YOUR BRAND’S PRESENCE, ENSURING STRATEGIC GROWTH AND UNMATCHED MARKET DOMINANCE.WE’VE GOT THE EXPERTISE TO SCALE YOUR BUSINESS EFFICIENTLY AND EFFECTIVELY.
+
                     </p>
                 </div>
                 <div style={imageRow}>
@@ -49,7 +50,8 @@ const industries = () => {
                     <motion.img src={Img2} alt="" style={imageStyle} variants={imageVariants(1)} initial="initial" animate="animate" transition={transition} whileHover={{ scale: 1.02 }} />
                     <div style={philosophySection}>
                         <h3 style={philosophyTitle}> Our philosophy</h3>
-                        <p style={philosophyText}>The Famesters Influencer Marketing agency exists to bring actual results for businesses and do the work fast, effectively, and smartly. We are a team of professionals, passionate about Influencer Marketing campaigns that actually have a meaning and a real impact. We nurture genuine connections and strengthen the bonds between brands and influencers, and ultimately – brands and their target audiences.</p>
+                        <p style={philosophyText}> Trend Fluence is simple: deliver tangible results with speed, precision, and intelligence. We are a passionate team dedicated to creating influencer marketing campaigns that truly matter and drive real impact. By fostering authentic relationships, we bridge the gap between brands, influencers, and their audiences, ensuring lasting connections that resonate.
+                        </p>
                     </div>
                 </div>
                 <div style={imageRow}>
@@ -65,17 +67,7 @@ const industries = () => {
                 <div style={lastRow}>
                     <div style={lastParagraphSection}>
                         <p style={lastParagraphText}>
-                            We believe that true success in influencer
-                            marketing is achieved through a
-                            combination of experience, data- driven
-                            insights, and genuine relationships. With
-                            over 8 years of expertise, we harness the
-                            power of data to craft strategies that
-                            deliver tangible, measurable outcomes.
-                            We value transparency just as you do and
-                            make sure that you always know what
-                            you're paying for and can clearly see the
-                            benefits.
+                            We believe that real success in influencer marketing comes from a perfect blend of experience, data-driven strategies, and authentic partnerships. With over 3 years of expertise, we leverage insights to develop campaigns that deliver measurable results. Committed to transparency, we ensure you always understand what you're investing in and can clearly track the value you're receiving.
                         </p>
                     </div>
                     <motion.img src={Img9} alt="" style={imageStyle} variants={imageVariants(8)} initial="initial" animate="animate" transition={transition} whileHover={{ scale: 1.02 }} />
